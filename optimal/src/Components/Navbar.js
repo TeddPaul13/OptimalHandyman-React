@@ -36,9 +36,10 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="static" >
+      <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
         <Toolbar disableGutters>
+          {/* LOGO GOES HERE TO REPLACE*/}
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
@@ -51,7 +52,7 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'green',
               textDecoration: 'none',
             }}
           >
@@ -94,7 +95,9 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
+          {/* SMALL SCREEN BREAKPOINT  */}
+          <AdbIcon sx={{ display: { xs: 'none', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -102,7 +105,7 @@ function Navbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'none', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -118,7 +121,7 @@ function Navbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'green', display: 'block' }}
               >
                 {page}
               </Button>
@@ -126,13 +129,10 @@ function Navbar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-                <Button variant='contained' onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+            <Tooltip>
+                <Button variant='contained' onClick={handleOpenUserMenu} sx={{ p: 1, bgcolor:"green"}} >
                     GET QUOTE
                 </Button>
-              {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton> */}
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
