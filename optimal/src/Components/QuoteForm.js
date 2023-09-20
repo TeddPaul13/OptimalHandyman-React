@@ -13,19 +13,23 @@ import { spacing } from '@mui/system';
 
 import Container from "@mui/material/Container";
 
+import DatePickerValue from "./DatePicker";
+import SelectService from "./SelectService";
+
 
 
 export default function QuoteForm() {
 
   return (
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
+      <Typography component="h1" variant="h5">
+          Get a Free Quote
+        </Typography>
         <Box sx={{ border: 2, p:2 , borderRadius: 2, borderColor: 'green'}}>
       <CssBaseline />
       <div >
-        <Typography component="h1" variant="h5">
-          Get a Free Quote
-        </Typography>
-        <form  noValidate>
+        
+        <form  validate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -35,22 +39,12 @@ export default function QuoteForm() {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label="Name"
                 autoFocus
+                color="success"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
-            <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
@@ -59,19 +53,65 @@ export default function QuoteForm() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                color="success"
               />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              {/* Add code to Validate phone number if the user chooses to  */}
+              <TextField
+                variant="outlined"
+                fullWidth
+                id="phone"
+                label="Phone No.(Optional)"
+                type="number"
+                name="phone"
+                autoComplete="phone"
+                color="success"
+              />
+            </Grid>
+            
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                name="address"
+                label="Home Address (Optional)"
+                id="address"
+                autoComplete="address"
+                color="success"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="suburb"
+                label="Suburb"
+                id="suburb"
+                autoComplete="suburb"
+                color="success"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <SelectService/>
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                name="task"
+                label="Task Description"
+                id="task"
+                multiline
+                rows={4}
+                autoComplete="task"
+                color="success"
               />
+            </Grid>
+            <Grid item xs={12} sm={6} >
+             <DatePickerValue/>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -87,7 +127,7 @@ export default function QuoteForm() {
             color="primary"
            
           >
-            Submit
+            Request Quote
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
