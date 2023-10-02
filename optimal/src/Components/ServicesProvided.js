@@ -10,15 +10,15 @@ import { CardActionArea } from "@mui/material";
 
 export default function ServiceCard() {
   return (
-    <Container component="main" maxWidth="xxl" sx={{ mt: 2 }} justifyContent="center" display="flex">
-      <Typography component="h1" variant="h5">
+    <Container component="main" maxWidth="xxl" sx={{ mt: 2 }} >
+      <Typography component="h1" variant="h5" sx={{display: 'flex', justifyContent: 'center', mb:2}}>
         Servirces Provided
       </Typography>
-      <Box sx={{ border: 2, p:2, borderRadius: 2, borderColor: "green" }} justifyContent="center">
+      <Box sx={{  p:2, borderRadius: 2, display: 'flex', justifyContent: 'center' }} >
         <div>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={3}>
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 300}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -28,7 +28,7 @@ export default function ServiceCard() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    Furniture Assembly
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with
@@ -40,7 +40,7 @@ export default function ServiceCard() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 300}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -50,7 +50,7 @@ export default function ServiceCard() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    Rubbish Removal
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with
@@ -62,7 +62,7 @@ export default function ServiceCard() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 300}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -72,7 +72,7 @@ export default function ServiceCard() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    Wall Mounting
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with
@@ -84,7 +84,7 @@ export default function ServiceCard() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 300}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -94,7 +94,7 @@ export default function ServiceCard() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    General Maintenance
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with

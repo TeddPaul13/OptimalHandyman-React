@@ -22,26 +22,31 @@ function Businesstitle() {
     <>
       {/* CssBaseline Resets the brower's css */}
       <CssBaseline />
-      <Container maxWidth="xxl" disableGutters sx={{bgcolor:'green', display:{xs:'flex'}, justifyContent:'center'}}>
-      <ThemeProvider theme={theme}>
-            <Typography variant="h1" sx={{ color: "white", mt: 2 }}>
-              Optimal Handyman Service
+      <Container
+        maxWidth="xxl"
+        disableGutters
+        sx={{
+          bgcolor: "green",
+          display: { xs: "flex" },
+          justifyContent: "center",
+        }}
+      >
+        <ThemeProvider theme={theme}>
+          <Typography variant="h1" sx={{ color: "white", mt: 2 }}>
+            Optimal Handyman Service
+          </Typography>
+        </ThemeProvider>
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+          <div>
+            <Typography variant="body1" sx={{ color: "white", mt: 2 }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac
+              habitasse platea dictumst quisque sagittis purus sit amet.
+              Tristique magna sit amet purus. Tincidunt id aliquet risus feugiat
+              in ante metus dictum at.
             </Typography>
-          </ThemeProvider>
-        
-      {/* <Box
-          sx={{
-            bgcolor: "green",
-            height: "30vh",
-            width: "100%",
-            display: { xs: "flex" },
-            justifyContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          </Box> */}
-          
+          </div>
+        </Box>
       </Container>
     </>
   );
