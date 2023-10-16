@@ -24,7 +24,7 @@ export default function ServiceCard() {
                   component="img"
                   height="140"
                   image="/static/images/cards/contemplative-reptile.jpg"
-                  alt="green iguana"
+                  alt="Furniture Assembly"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -46,7 +46,7 @@ export default function ServiceCard() {
                   component="img"
                   height="140"
                   image="/static/images/cards/contemplative-reptile.jpg"
-                  alt="green iguana"
+                  alt="Rubbish Removal"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -68,7 +68,7 @@ export default function ServiceCard() {
                   component="img"
                   height="140"
                   image="/static/images/cards/contemplative-reptile.jpg"
-                  alt="green iguana"
+                  alt="Wall Mounting"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -77,7 +77,7 @@ export default function ServiceCard() {
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with
                     over 6,000 species, ranging across all continents except
-                    Antarctica
+                    Antarctica.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -90,7 +90,7 @@ export default function ServiceCard() {
                   component="img"
                   height="140"
                   image="/static/images/cards/contemplative-reptile.jpg"
-                  alt="green iguana"
+                  alt="General Maintenance"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

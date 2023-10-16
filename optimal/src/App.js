@@ -1,5 +1,6 @@
 
 import './App.css';
+import Banner from './Components/Banner';
 import BizTitle from './Components/BizTitle';
 import Businesstitle from './Components/Businesstitle';
 import Navbar from './Components/Navbar';
@@ -11,9 +12,11 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      {/* <Banner /> */}
       <BizTitle/>
       <ServiceCard/>
       <Testimonials/>
+      
 
     </div>
   );
