@@ -15,6 +15,7 @@ function BizTitle() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         overflow: "hidden",
+        
       }}
     >
       <Container maxWidth="xl">

@@ -1,4 +1,5 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Banner from './Components/Banner';
 import BizTitle from './Components/BizTitle';
@@ -11,7 +12,11 @@ import Testimonials from './Components/Testimonials';
 function App() {
   return (
     <div className="App">
+      
       <Navbar />
+      <Routes>
+      <Route path='/getquote' element={<QuoteForm/>}/>
+      </Routes>
       {/* <Banner /> */}
       <BizTitle/>
       <ServiceCard/>
