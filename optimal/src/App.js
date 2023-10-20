@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar';
 import QuoteForm from './Components/QuoteForm';
 import ServiceCard from './Components/ServicesProvided';
 import Testimonials from './Components/Testimonials';
+import AreasOfService from './Components/AreasOfService';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
       {/* <Banner /> */}
       <BizTitle/>
       <ServiceCard/>
+      <AreasOfService/>
       <Testimonials/>
+      
       
 
     </div>

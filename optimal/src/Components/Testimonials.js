@@ -7,19 +7,19 @@ import Paper from "@mui/material/Paper";
 
 function Testimonials() {
   return (
-    <Container maxWidth="xxl" sx={{ bgcolor: "green" }}>
+    <Container maxWidth="xxl" sx={{ bgcolor: "white"}}>
         <Container maxWidth= "xl">
       <Box sx={{ display: "flex", justifyContent: "center", ml: 5, flexWrap: "wrap" }}>
         <div>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography variant="h5" sx={{ pt: 2, color: "white" }}>
+          <Typography variant="h5" sx={{ pt: 2 }}>
             {" "}
             Testimonials
           </Typography>
         </Box>
         </div>
         
-        <Typography variant="body1" sx={{m:2, color:"white"}}>
+        <Typography variant="body1" sx={{m:2}}>
           {" "}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac
