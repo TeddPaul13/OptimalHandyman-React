@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+import RecipeReviewCard from "./CardForTestimonials";
 
 function Testimonials() {
   return (
@@ -27,6 +28,7 @@ function Testimonials() {
           magna sit amet purus. Tincidunt id aliquet risus feugiat in ante metus
           dictum at.
         </Typography>
+        <RecipeReviewCard/>
       </Box>
       </Container>
     </Container>
