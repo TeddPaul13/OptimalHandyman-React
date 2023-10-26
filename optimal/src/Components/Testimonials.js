@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import RecipeReviewCard from "./CardForTestimonials";
+import WriteAReviewButton from "./WriteAReviewButton";
 
 function Testimonials() {
   return (
@@ -31,6 +32,7 @@ function Testimonials() {
         </div>
       </Box>
       <RecipeReviewCard/>
+      <WriteAReviewButton/>
       </Container>
     </Container>
   );
