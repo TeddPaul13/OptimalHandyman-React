@@ -9,6 +9,7 @@ import QuoteForm from './Components/QuoteForm';
 import ServiceCard from './Components/ServicesProvided';
 import Testimonials from './Components/Testimonials';
 import AreasOfService from './Components/AreasOfService';
+import PhotoGallery from './Components/PhotoGallery';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <BizTitle/>
       <ServiceCard/>
       <AreasOfService/>
+      <PhotoGallery/>
       <Testimonials/>
       
       
