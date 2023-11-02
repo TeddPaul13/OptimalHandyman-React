@@ -10,6 +10,7 @@ import ServiceCard from './Components/ServicesProvided';
 import Testimonials from './Components/Testimonials';
 import AreasOfService from './Components/AreasOfService';
 import PhotoGallery from './Components/PhotoGallery';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
       <BizTitle/>
       <ServiceCard/>
       <AreasOfService/>
-      <PhotoGallery/>
       <Testimonials/>
+      <Footer/>
       
       
 
