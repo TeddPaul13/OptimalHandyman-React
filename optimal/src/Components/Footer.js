@@ -4,13 +4,13 @@ import React from "react";
 function Footer() {
   return (
     <Container maxWidth="xxl" disableGutters sx={{ bgcolor: "#81dd0b" }}>
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 2 , flexDirection: "column", alignItems: "center"}}>
         <Typography variant="body1">
-          Optimal Handyman Services. by TedTech Solutions.
+          TSS All Rights Reserved.
         </Typography>
         <Box>
         <Typography variant="body1">
-          Optimal Handyman Services. by TedTech Solutions.
+         TSS All Rights Reserved.
         </Typography>
         </Box>
       </Box>

@@ -11,38 +11,24 @@ function BizTitle() {
     <Container
       maxWidth="xxl"
       sx={{
-        backgroundImage: `url(${Banner})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        overflow: "hidden",
+        bgcolor: "#81dd0b"
         
       }}
     >
-      <Container maxWidth="xl">
-        <Box
+      <Container maxWidth="xxl">
+        {/* <Box
           sx={{
             display: "flex",
             justifyContent: "right",
             alignItems: "flex-end",
             ml: 5,
           }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              "& > :not(style)": {
-                mt: 2,
-                mb: 3,
-                width: 300,
-                height: 300,
-              },
-            }}
-          >
-            <Paper elevation={3} sx={{ mb: 3 }}>
-              Call Teddy
+        > */}
+            <Paper elevation={0} sx={{ mb: 3, mt:2, width:'100%', height: '400px', backgroundImage: `url(${Banner})`, backgroundSize:'cover'}}>
+              
             </Paper>
-          </Box>
-        </Box>
+          
+        {/* </Box> */}
       </Container>
     </Container>
   );
