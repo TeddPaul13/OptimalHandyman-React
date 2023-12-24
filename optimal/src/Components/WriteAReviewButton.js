@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 
 export default function WriteAReviewButton() {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", mt: 2}}>
+    <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", mt: 2, mb: 2}}>
     <Button variant="contained" disableElevation>
       WRITE A REVIEW
     </Button>

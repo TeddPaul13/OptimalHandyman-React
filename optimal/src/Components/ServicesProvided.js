@@ -7,6 +7,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import WallMouniting from "../Assets/WallMounting.jpg"
+import FurnitureAssembly from "../Assets/FurnitureAssembly.jpg"
 
 export default function ServiceCard() {
   return (
@@ -16,14 +18,14 @@ export default function ServiceCard() {
       </Typography>
       <Box sx={{  p:2, borderRadius: 2, display: 'flex', justifyContent: 'center' }} >
         <div>
-        <Grid container spacing={4}>
+        <Grid container spacing={6}>
           <Grid item xs={12} sm={3}>
             <Card sx={{ maxWidth: 300}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
-                  image="/static/images/cards/contemplative-reptile.jpg"
+                  height="180"
+                  image= {FurnitureAssembly}
                   alt="Furniture Assembly"
                 />
                 <CardContent>
@@ -44,8 +46,8 @@ export default function ServiceCard() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
-                  image="/static/images/cards/contemplative-reptile.jpg"
+                  height="180"
+                  image={FurnitureAssembly}
                   alt="Rubbish Removal"
                 />
                 <CardContent>
@@ -66,8 +68,8 @@ export default function ServiceCard() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
-                  image="/static/images/cards/contemplative-reptile.jpg"
+                  height="180"
+                  image={WallMouniting}
                   alt="Wall Mounting"
                 />
                 <CardContent>
@@ -88,8 +90,8 @@ export default function ServiceCard() {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
-                  image="/static/images/cards/contemplative-reptile.jpg"
+                  height="180"
+                  image={WallMouniting}
                   alt="General Maintenance"
                 />
                 <CardContent>

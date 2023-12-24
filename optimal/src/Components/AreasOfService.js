@@ -28,7 +28,7 @@ function generate(element) {
 const Demo = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
 }));
-
+// TODO Include the map of the areas of service
 export default function AreasOfService() {
   return (
     <Container maxWidth="xxl" sx={{ bgcolor: "#81dd0b" , justifyContent: "center" }}>

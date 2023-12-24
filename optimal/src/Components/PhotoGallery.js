@@ -1,123 +1,126 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { IconButton } from "@mui/material";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import Slide from "@mui/material/Slide";
-import Stack from "@mui/material/Stack";
-import Card from "@mui/material/Card";
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import Typography from "@mui/material/Typography";
+import "../App.css";
+import WallMouniting from "../Assets/WallMounting.jpg"
 
-function PhotoGallery() {
-  const [cards, setCards] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [slideDirection, setSlideDirection] = useState("left");
-  // Configuring carousel behavior
-  const cardsPerPage = 4;
-  const duplicateCards = Array.from({ length: 10 }, (_, i) => (
-    <Card key={i}><CardActionArea>
-    <CardMedia
-      component="img"
-      height="140"
-      image="/static/images/cards/contemplative-reptile.jpg"
-      alt="green iguana"
-    />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
-        Lizard
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
-      </Typography>
-    </CardContent>
-  </CardActionArea></Card>
-  ));
-  //Function to Navigate the  carousel
-  const handleNextPage = () => {
-    setSlideDirection("left");
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const handlePrevPage = () => {
-    setSlideDirection("right");
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
-
-  //Setting Card data
-
-  useEffect(() => {
-    setCards(duplicateCards);
-  });
-
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
   return (
-    <>
-    
-        <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          alignContent: "center",
-          justifyContent: "center",
-          height: "400px",
-        }}
-      >
-        {" "}
-        <IconButton
-          onclick={handlePrevPage}
-          sx={{ margin: 5 }}
-          disabled={currentPage === 0}
-        >
-          <NavigateBeforeIcon />
-        </IconButton>
-        {cards
-          .slice(
-            currentPage * cardsPerPage,
-            currentPage * cardsPerPage + cardsPerPage
-          )
-          .map((card, index) => (
-            <div key={index}>{card}
-            <div
-            key={`card-${index}`}
-            sx={{
-              width: "100%",
-              height: "100%",
-              display: currentPage === index ? "block" : "none",
-            }}
-          >
-          
-        <Slide direction={slideDirection} in={currentPage === index}>
-          {card}
-        </Slide>
-        </div>
-        </div>
-  ))}
-        <Stack
-          spacing={2}
-          direction="row"
-          alignContent="center"
-          justifyContent="center"
-        >
-          
-        </Stack>
-        <IconButton
-          onClick={handleNextPage}
-          sx={{ margin: 5 }}
-          disabled={
-            currentPage >= Math.ceil((cards.length || 0) / cardsPerPage) - 1
-          }
-        >
-          <NavigateNextIcon />
-        </IconButton>
-      </Box>
-    
-    </>
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        background: "#81dd0b",
+        marginLeft: 10,
+      }}
+      onClick={onClick}
+    />
   );
 }
 
-export default PhotoGallery;
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "#81dd0b", marginRight: 10,}}
+      onClick={onClick}
+    />
+  );
+}
+export default function PhotoGallery() {
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  return (
+    <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
+      <Container maxWidth="xl">
+        <Box
+          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+        >
+          <div>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Typography variant="h5" sx={{ pt: 2 }}>
+                {" "}
+                Projects Gallery
+              </Typography>
+            </Box>
+          </div>
+        </Box>
+        <div className="slider-container">
+          <Slider {...settings} className="custom-slider">
+            <div className="slide-content">
+             <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content">
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content">
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content">
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content">
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content">
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content">
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content"> 
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content"> 
+            <img src={WallMouniting}/>
+            </div>
+            <div className="slide-content"> 
+            <img src={WallMouniting}/>
+            </div>
+          </Slider>
+        </div>
+      </Container>
+    </Container>
+  );
+}

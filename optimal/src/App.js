@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Banner from './Components/Banner';
 import BizTitle from './Components/BizTitle';
-import Businesstitle from './Components/Businesstitle';
 import Navbar from './Components/Navbar';
 import QuoteForm from './Components/QuoteForm';
 import ServiceCard from './Components/ServicesProvided';
@@ -24,6 +23,7 @@ function App() {
       <BizTitle/>
       <ServiceCard/>
       <AreasOfService/>
+      <PhotoGallery/>
       <Testimonials/>
       <Footer/>
       

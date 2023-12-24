@@ -28,7 +28,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function ReviewCard() {
   const customerReviews = [
     {
       name: "Teddy Paul",
@@ -55,42 +55,36 @@ export default function RecipeReviewCard() {
 
   return (
     <>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-    
-      >
+      <Grid container spacing={{ xs: 2, md: 3 }}>
         {customerReviews.map((reviewsToDisplay, k) => (
           <Grid item xs={12} sm={3} md={4} key={k}>
-          
-              <Card sx={{ maxWidth: 345 }} >
-                <CardHeader
-                  avatar={
-                    // Set the Avatar to be the first letter of customer name
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                      R
-                    </Avatar>
-                  }
-                  title={reviewsToDisplay.name}
-                  subheader={reviewsToDisplay.suburb}
-                />
-                <CardContent>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    {reviewsToDisplay.service}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {" "}
-                    {reviewsToDisplay.review}
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <StarOutlinedIcon />
-                  <StarOutlinedIcon />
-                  <StarOutlinedIcon />
-                  <StarOutlinedIcon />
-                </CardActions>
-              </Card>
-            
+            <Card sx={{ maxWidth: 345 }}>
+              <CardHeader
+                avatar={
+                  // Set the Avatar to be the first letter of customer name
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    R
+                  </Avatar>
+                }
+                title={reviewsToDisplay.name}
+                subheader={reviewsToDisplay.suburb}
+              />
+              <CardContent>
+                <Typography variant="subtitle1" color="text.secondary">
+                  {reviewsToDisplay.service}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {" "}
+                  {reviewsToDisplay.review}
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+                <StarOutlinedIcon />
+              </CardActions>
+            </Card>
           </Grid>
         ))}
       </Grid>
