@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import Banner from "./Components/Banner";
 import BizTitle from "./Components/BizTitle";
@@ -23,10 +23,7 @@ function App() {
       <Testimonials />
       <Footer />
     </div>
-    <Routes>
-        <Route path="/"/>
-        <Route path="/getquote" element={<QuoteForm />} />
-      </Routes>
+   
     </>
   );
 }
