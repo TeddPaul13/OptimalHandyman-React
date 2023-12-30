@@ -17,9 +17,12 @@ import IconButton from "@mui/material/IconButton";
 
 import DatePickerValue from "./DatePicker";
 import SelectService from "./SelectService";
+import Navbar from "./Navbar";
 
 export default function QuoteForm() {
   return (
+    <>
+    <Navbar/>
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
       <Typography component="h1" variant="h5">
         Get a Free Quote
@@ -125,18 +128,18 @@ export default function QuoteForm() {
               </Grid>
             </Grid>
             <Grid container justifyContent={"center"} mt={2}>
-              <Grid container justify="flex-end">
+              {/* <Grid container justify="flex-end">
                 <Grid item>
                   <Typography>
                     Include pictures to better understand the task.
                   </Typography>
                   <Typography>Add upto 5 photos.</Typography>
                   {/* Style the Icon button appropriately */}
-                  <IconButton>
+                  {/* <IconButton>
                     <AddBoxOutlinedIcon></AddBoxOutlinedIcon>
                   </IconButton>
                 </Grid>
-              </Grid>
+              </Grid> */} 
               <Button
                 type="submit"
                 size="large"
@@ -150,5 +153,6 @@ export default function QuoteForm() {
         </div>
       </Box>
     </Container>
+    </>
   );
 }

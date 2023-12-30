@@ -27,8 +27,8 @@ export default function SelectService() {
         >
           <MenuItem value={'furniture'}>Furniture Assembly</MenuItem>
           <MenuItem value={'wallmounting'}>Wall Mounting</MenuItem>
-          <MenuItem value={'minor'}>Minor Repair and Maintenance</MenuItem>
-          <MenuItem value={'other'}>Other</MenuItem>
+          <MenuItem value={'minor'}>Rubbish Removal</MenuItem>
+          <MenuItem value={'other'}>General Maintenance</MenuItem>
         </Select>
       </FormControl>
     // </Box>
