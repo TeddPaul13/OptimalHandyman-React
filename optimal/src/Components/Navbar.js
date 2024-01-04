@@ -55,7 +55,7 @@ function Navbar() {
         <Toolbar disableGutters>
           {/* LOGO GOES HERE TO REPLACE*/}
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
+           <Typography
             variant="h6"
             noWrap
             component="a"

@@ -9,12 +9,13 @@ import Testimonials from "./Components/Testimonials";
 import AreasOfService from "./Components/AreasOfService";
 import PhotoGallery from "./Components/PhotoGallery";
 import Footer from "./Components/Footer";
+import DrawerAppBar from "./Components/AppBarWithDrawer";
 
 function App() {
   return (
     <>
     <div className="App">
-      <Navbar />
+      <DrawerAppBar/>
       {/* <Banner /> */}
       <BizTitle />
       <ServiceCard />
