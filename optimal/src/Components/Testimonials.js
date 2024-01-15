@@ -41,7 +41,9 @@ function Testimonials() {
           </div>
         </Box>
         <ReviewCard />
+        <Box sx={{pb: 1}}>
         <WriteAReviewButton />
+        </Box>
       </Container>
     </Container>
   );

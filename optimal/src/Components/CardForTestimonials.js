@@ -38,14 +38,14 @@ export default function ReviewCard() {
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like. This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
     },
     {
-      name: "Teddy Paul",
+      name: "Paul Teddy",
       suburb: "Blacktown",
       service: "Lawn Mowing",
       review:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like. This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
     },
     {
-      name: "Teddy Paul",
+      name: "teddy Paul",
       suburb: "Blacktown",
       service: "Lawn Mowing",
       review:
@@ -63,7 +63,7 @@ export default function ReviewCard() {
                 avatar={
                   // Set the Avatar to be the first letter of customer name
                   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    R
+                    {reviewsToDisplay.name[0].toUpperCase()}
                   </Avatar>
                 }
                 title={reviewsToDisplay.name}

@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <Container maxWidth="xxl" disableGutters sx={{ bgcolor: "#81dd0b" }}>
+    <Container maxWidth="xxl" disableGutters sx={{ bgcolor: "white" }}>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 2 , flexDirection: "column", alignItems: "center"}}>
         <Typography variant="body1">
           TSS All Rights Reserved.
