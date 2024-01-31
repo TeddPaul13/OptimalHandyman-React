@@ -10,6 +10,7 @@ import AreasOfService from "./Components/AreasOfService";
 import PhotoGallery from "./Components/PhotoGallery";
 import Footer from "./Components/Footer";
 import DrawerAppBar from "./Components/AppBarWithDrawer";
+import ReviewForm from "./Components/ReviewForm";
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
       <AreasOfService />
       <PhotoGallery />
       <Testimonials />
+      <ReviewForm/>
       <Footer />
+      <QuoteForm/>
     </div>
    
     </>

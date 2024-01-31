@@ -1,9 +1,9 @@
 const UserReviews = require("./reviews");
 
 async function init() {
-  await Promise(
+  await Promise.all([
     UserReviews.sync()
-      );
+   ] );
 }
 init();
 

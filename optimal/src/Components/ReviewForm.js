@@ -19,13 +19,13 @@ import DatePickerValue from "./DatePicker";
 import SelectService from "./SelectService";
 import Navbar from "./Navbar";
 
-export default function QuoteForm() {
+export default function ReviewForm() {
   return (
     <>
     <Navbar/>
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
       <Typography component="h1" variant="h5">
-        Get a Free Quote
+        Leave a Review
       </Typography>
       <Box sx={{ border: 2, p: 2, borderRadius: 2, borderColor: "green" }}>
         <CssBaseline />
@@ -39,8 +39,8 @@ export default function QuoteForm() {
                   variant="outlined"
                   required
                   fullWidth
-                  id="firstName"
-                  label="Name"
+                  id="firstname"
+                  label="FirstName"
                   autoFocus
                   color="success"
                 />
@@ -48,37 +48,11 @@ export default function QuoteForm() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   variant="outlined"
-                  required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  color="success"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                {/* Add code to Validate phone number if the user chooses to  */}
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="phone"
-                  label="Phone No.(Optional)"
-                  type="number"
-                  name="phone"
-                  autoComplete="phone"
-                  color="success"
-                />
-              </Grid>
-
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  name="address"
-                  label="Home Address (Optional)"
-                  id="address"
-                  autoComplete="address"
+                  id="lastname"
+                  label="Last Name"
+                  name="lastname"
+                  autoComplete="lname"
                   color="success"
                 />
               </Grid>
@@ -95,19 +69,7 @@ export default function QuoteForm() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="suburb"
-                  label="Postcode"
-                  id="suburb"
-                  autoComplete="suburb"
-                  color="success"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <DatePickerValue  label= "When can it be done?"/>
+                <DatePickerValue label="When was it done"/>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <SelectService />
@@ -118,7 +80,7 @@ export default function QuoteForm() {
                   required
                   fullWidth
                   name="task"
-                  label="Task Description"
+                  label="Write your Review"
                   id="task"
                   multiline
                   rows={4}
@@ -127,26 +89,16 @@ export default function QuoteForm() {
                 />
               </Grid>
             </Grid>
+            {/*  SEND DATA TO DATABASE ONSUBMIT. */}
             <Grid container justifyContent={"center"} mt={2}>
-              {/* <Grid container justify="flex-end">
-                <Grid item>
-                  <Typography>
-                    Include pictures to better understand the task.
-                  </Typography>
-                  <Typography>Add upto 5 photos.</Typography>
-                  {/* Style the Icon button appropriately */}
-                  {/* <IconButton>
-                    <AddBoxOutlinedIcon></AddBoxOutlinedIcon>
-                  </IconButton>
-                </Grid>
-              </Grid> */} 
+              
               <Button
                 type="submit"
                 size="large"
                 variant="contained"
                 color="success"
               >
-                Request Quote
+                SUBMIT
               </Button>
             </Grid>
           </form>

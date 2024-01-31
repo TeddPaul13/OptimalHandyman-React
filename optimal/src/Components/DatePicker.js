@@ -6,7 +6,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import Grid from "@mui/material/Grid";
 
-export default function DatePickerValue() {
+export default function DatePickerValue({label}) {
   const [value, setValue] = useState(dayjs());
 
 
@@ -15,7 +15,7 @@ export default function DatePickerValue() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       {/*  Use Theme Style to overide API blue and red color on the border*/}
         <DateTimePicker
-          label="When can it be done?" 
+          label={label}
           disablePast
           color="success"
           value={value}
