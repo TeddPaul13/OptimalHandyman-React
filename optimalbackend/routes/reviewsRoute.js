@@ -6,6 +6,6 @@ router.post("/create", (req, res) =>{
     Controllers.reviewsController.createReview(req.body, res);
 });
 router.get("/getreview", (req, res) => {
-    Controllers.reviewsController.getReviews(req.body, res)
+    Controllers.reviewsController.getReviews(res)
 })
 module.exports = router;
