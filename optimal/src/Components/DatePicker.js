@@ -6,10 +6,18 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import Grid from "@mui/material/Grid";
 
-export default function DatePickerValue({label}) {
+
+export default function DatePickerValue({label, onDateChange, name}) {
   const [value, setValue] = useState(dayjs());
 
+  const handleChange = (newValue) =>{
+    setValue(newValue)
+// calling onchange function and passing it a prop to ReviewForm component.
+    if (onDateChange){
+      onDateChange(newValue)
+    }
 
+  }
   return (
     <Grid item xs={12} >
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -17,9 +25,10 @@ export default function DatePickerValue({label}) {
         <DateTimePicker
           label={label}
           disablePast
+          name = {name}
           color="success"
           value={value}
-          onChange={(newValue) => setValue(newValue)}
+          onChange={handleChange}
         />
     </LocalizationProvider>
     </Grid>

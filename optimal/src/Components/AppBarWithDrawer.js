@@ -19,9 +19,10 @@ import Button from '@mui/material/Button';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Styled from "styled-components";
 import Banner from './Banner';
+import Testimonials from './Testimonials';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Home', 'Services', 'Projects Gallery', 'Testimonials'];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -91,7 +92,7 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#81dd0b' }}>
+              <Button key={item} sx={{ color: '#81dd0b' }} >
                 {item}
               </Button>
             ))}

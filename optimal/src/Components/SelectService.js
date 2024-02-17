@@ -5,11 +5,15 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectService() {
+export default function SelectService({onServiceSelectionChange, name}) {
   const [service, setService] = useState('');
 
   const handleChange = (event) => {
     setService(event.target.value);
+// calling onchange function and passing it a prop to review form component.
+    if (onServiceSelectionChange){
+      onServiceSelectionChange(event)
+    }
   };
 
   return (
@@ -18,6 +22,7 @@ export default function SelectService() {
         <InputLabel id="select-service-label" color='success'>Service Category</InputLabel>
         <Select
           labelId="select-service-id"
+          name={name}
           id="select-service"
           color='success'
           required
@@ -27,7 +32,7 @@ export default function SelectService() {
         >
           <MenuItem value={'furniture'}>Furniture Assembly</MenuItem>
           <MenuItem value={'wallmounting'}>Wall Mounting</MenuItem>
-          <MenuItem value={'minor'}>Rubbish Removal</MenuItem>
+          <MenuItem value={'minor'}>Rubbish Removal    </MenuItem>
           <MenuItem value={'other'}>General Maintenance</MenuItem>
         </Select>
       </FormControl>

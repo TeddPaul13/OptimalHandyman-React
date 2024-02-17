@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import QuoteForm from './Components/QuoteForm';
+import ReviewForm from './Components/ReviewForm';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/getquote",
     element: <QuoteForm/>
+  },
+  {
+    path: "/writereview",
+    element: <ReviewForm />
   }
 
 ])

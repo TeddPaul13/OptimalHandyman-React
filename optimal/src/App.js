@@ -23,9 +23,9 @@ function App() {
       <AreasOfService />
       <PhotoGallery />
       <Testimonials />
-      <ReviewForm/>
+      {/* <ReviewForm/> */}
       <Footer />
-      <QuoteForm/>
+      {/* <QuoteForm/> */}
     </div>
    
     </>

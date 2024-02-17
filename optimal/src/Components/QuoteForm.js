@@ -18,11 +18,12 @@ import IconButton from "@mui/material/IconButton";
 import DatePickerValue from "./DatePicker";
 import SelectService from "./SelectService";
 import Navbar from "./Navbar";
+import DrawerAppBar from "./AppBarWithDrawer";
 
 export default function QuoteForm() {
   return (
     <>
-    <Navbar/>
+    <DrawerAppBar/>
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
       <Typography component="h1" variant="h5">
         Get a Free Quote
