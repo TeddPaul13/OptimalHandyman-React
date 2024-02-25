@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import FolderIcon from "@mui/icons-material/Folder";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Container from "@mui/material/Container";
+import AreaMap from "./AreaMap";
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -30,6 +31,9 @@ const Demo = styled("div")(({ theme }) => ({
 }));
 // TODO Include the map of the areas of service
 export default function AreasOfService() {
+
+  const theme = useTheme();
+
   return (
     <Container maxWidth="xxl" sx={{ bgcolor: "#81dd0b" , justifyContent: "center" }}>
     <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
@@ -41,73 +45,21 @@ export default function AreasOfService() {
           </Typography>
         </Box>
       </div>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={3}>
-          <List>
-            <ListItem>
-              <ListItemText primary="Pendle Hill" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Baulkham Hills" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Seven Hills" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Castle Hill" />
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <List>
-            <ListItem>
-              <ListItemText primary="Blacktown" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Box Hill" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Schofields" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Riverstone" />
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <List>
-            <ListItem>
-              <ListItemText primary="Blacktown" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Box Hill" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Schofields" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Riverstone" />
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <List>
-            <ListItem>
-              <ListItemText primary="Blacktown" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Box Hill" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Schofields" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Riverstone" />
-            </ListItem>
-          </List>
-        </Grid>
-      </Grid>
     </Box>
+    <Grid container spacing={2}>
+      {/* <Box sx={{height: 200, border: 2, width: '100%', [theme.breakpoints.up('md')]: {width:'50%'}}}> */}
+      <Grid item xs={12} md={6}>
+      <Box sx={{}}>
+      
+      </Box>
+      </Grid>
+      <Grid item xs={12} md={6}>
+      <Box sx={{width: 600,  height: 450 }}>
+      <AreaMap/>
+      </Box>
+      </Grid>
+
+    </Grid>
     </Container>
   );
 }

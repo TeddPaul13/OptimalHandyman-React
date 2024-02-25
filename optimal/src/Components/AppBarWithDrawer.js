@@ -17,6 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {Link as RouterLink} from 'react-router-dom';
 import Styled from "styled-components";
 import Banner from './Banner';
 import Testimonials from './Testimonials';
@@ -37,6 +38,10 @@ function DrawerAppBar(props) {
     navigate("/getquote")
   };
 
+  const navigateToHomePage = () =>{
+    navigate("/")
+  }
+
   const AppBarTheme = createTheme({
     palette: {
         primary:{
@@ -54,8 +59,8 @@ function DrawerAppBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <Link  style={{ textDecoration: 'none', color: 'inherit' }}> 
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={navigateToHomePage}>
               <ListItemText primary={item} />
             </ListItemButton>
             </Link>
@@ -83,16 +88,22 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography
             variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            component={RouterLink} 
+            to="/" 
+            sx={{ flexGrow: 1, textDecoration: "none", color: '#81dd0b', display: { xs: 'none', sm: 'block' } }}
+            //TO DO Style this link
           >
+           
             Optimal Handyman Services
+            
           </Typography>
+          
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#81dd0b' }} >
+              <Button key={item} sx={{ color: '#81dd0b' }} onClick={navigateToHomePage} >
                 {item}
               </Button>
             ))}

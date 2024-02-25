@@ -9,8 +9,14 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import WallMouniting from "../Assets/WallMounting.jpg"
 import FurnitureAssembly from "../Assets/FurnitureAssembly.jpg"
+import { useNavigate } from "react-router-dom";
 
 export default function ServiceCard() {
+
+  const navigate = useNavigate();
+  const navigateToGetQuoteForService = () => {
+    navigate('/getquote')
+  }
   return (
     <Container component="main" maxWidth="xxl" sx={{ mt: 2 }} >
       <Typography component="h1" variant="h5" sx={{display: 'flex', justifyContent: 'center', mb:2}}>
@@ -21,7 +27,7 @@ export default function ServiceCard() {
         <Grid container spacing={6}>
           <Grid item xs={12} sm={3}>
             <Card sx={{ maxWidth: 300}}>
-              <CardActionArea>
+              <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
                   component="img"
                   height="180"
@@ -43,7 +49,7 @@ export default function ServiceCard() {
           </Grid>
           <Grid item xs={12} sm={3}>
             <Card sx={{ maxWidth: 300}}>
-              <CardActionArea>
+              <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
                   component="img"
                   height="180"
@@ -60,12 +66,12 @@ export default function ServiceCard() {
                     Antarctica
                   </Typography>
                 </CardContent>
-              </CardActionArea>
+              </CardActionArea >
             </Card>
           </Grid>
           <Grid item xs={12} sm={3}>
             <Card sx={{ maxWidth: 300}}>
-              <CardActionArea>
+              <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
                   component="img"
                   height="180"
@@ -87,7 +93,7 @@ export default function ServiceCard() {
           </Grid>
           <Grid item xs={12} sm={3}>
             <Card sx={{ maxWidth: 300}}>
-              <CardActionArea>
+              <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
                   component="img"
                   height="180"

@@ -11,6 +11,7 @@ import PhotoGallery from "./Components/PhotoGallery";
 import Footer from "./Components/Footer";
 import DrawerAppBar from "./Components/AppBarWithDrawer";
 import ReviewForm from "./Components/ReviewForm";
+import AreaMap from "./Components/AreaMap";
 
 function App() {
   return (

@@ -21,12 +21,13 @@ import Navbar from "./Navbar";
 import DrawerAppBar from "./AppBarWithDrawer";
 
 export default function QuoteForm() {
+
   return (
     <>
     <DrawerAppBar/>
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
       <Typography component="h1" variant="h5">
-        Get a Free Quote
+        Get a Free Quote 
       </Typography>
       <Box sx={{ border: 2, p: 2, borderRadius: 2, borderColor: "green" }}>
         <CssBaseline />
