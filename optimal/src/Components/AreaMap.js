@@ -1,24 +1,31 @@
 import React from 'react'
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import {useRef, useEffect} from 'react'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import { styled } from "@mui/material/styles";
 import "leaflet/dist/leaflet.css";
+import { map } from 'leaflet';
 
+// Define the bounds for Western Sydney
+const westernSydneyBounds = [
+  [-33.786, 150.827], // Southwest coordinates
+  [-33.657, 150.946]  // Northeast coordinates (Annangrove)
+];
 
-const outerbounds = [[50.505, -29.09]
-[52.505, 29.09]]
 function AreaMap() {
+
+  const mapRef = useRef(null);
+
+ const handleMap = (map) =>{
+  mapRef.current = map;
+  map.fitBounds(westernSydneyBounds)
+ }
   return (
    
-        <MapContainer bounds={outerbounds} zoom={13} center={51.505 -0.09} scrollWheelZoom={false} style={{width:"100%", height: "100%"}}>
+        <MapContainer  center={[-33.727, 150.852]} zoom={12} whenCreated={handleMap} zoomControl={false} dragging={false} scrollWheelZoom={false} doubleClickZoom={false} style={{width:"100%", height: "100%"}}>
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <Marker>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker>
   </MapContainer>
   
   )

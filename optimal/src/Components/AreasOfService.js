@@ -49,7 +49,7 @@ export default function AreasOfService() {
     <Grid container spacing={2}>
       {/* <Box sx={{height: 200, border: 2, width: '100%', [theme.breakpoints.up('md')]: {width:'50%'}}}> */}
       <Grid item xs={12} md={6}>
-      <Box sx={{}}>
+      <Box sx={{border: 1}}>
       
       </Box>
       </Grid>
