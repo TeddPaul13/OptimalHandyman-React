@@ -17,6 +17,7 @@ import FolderIcon from "@mui/icons-material/Folder";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Container from "@mui/material/Container";
 import AreaMap from "./AreaMap";
+import ListOfSuburbs from "./ListOfSurburbs";
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -46,12 +47,13 @@ export default function AreasOfService() {
         </Box>
       </div>
     </Box>
-    <Grid container spacing={2}>
+    <Grid container spacing={2} alignItems="center">
       {/* <Box sx={{height: 200, border: 2, width: '100%', [theme.breakpoints.up('md')]: {width:'50%'}}}> */}
       <Grid item xs={12} md={6}>
-      <Box sx={{border: 1}}>
-      
+      <Box sx={{ display: "flex", justifyContent: "center"}}>
+        <ListOfSuburbs/>
       </Box>
+     
       </Grid>
       <Grid item xs={12} md={6}>
       <Box sx={{width: 600,  height: 450 }}>

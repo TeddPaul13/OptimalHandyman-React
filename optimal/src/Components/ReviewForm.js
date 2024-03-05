@@ -30,7 +30,6 @@ export default function ReviewForm() {
     suburb: "",
     dateofservice: "",
     serviceprovided: "",
-    date: "",
   })
 
   const changeFormDetails = (event) =>{

@@ -1,5 +1,5 @@
 import React from 'react';
-import BannerImage from "../Assets/OptimalHandymanBanner.png";
+import BannerImage from "../Assets/BannerforWebsite.png";
 import "../App.css"
 
 
