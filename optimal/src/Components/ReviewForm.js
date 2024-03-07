@@ -103,7 +103,7 @@ export default function ReviewForm() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <DatePickerValue label="When was it done" onDateChange={changeFormDetails} name ="dateofservice"/>
+                <DatePickerValue label="When was it done" onDateChange={changeFormDetails} name="dateofservice"/>
               </Grid>
               <Grid item xs={12} sm={6}>
                 {/* Prop passed here from SelectService component */}

@@ -8,7 +8,9 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import WallMouniting from "../Assets/WallMounting.jpg"
-import FurnitureAssembly from "../Assets/FurnitureAssembly.jpg"
+import FurnitureAssembly from "../Assets/flatpackassembly.jpg"
+import RubbishRemoval from "../Assets/rubbishremoval1.png"
+import GeneralMaintenance from "../Assets/fixingwithdrill.jpg"
 import { useNavigate } from "react-router-dom";
 
 export default function ServiceCard() {
@@ -39,9 +41,8 @@ export default function ServiceCard() {
                     Furniture Assembly
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                  Skip the frustration of DIY assembly for your home or office furniture. We can swiftly assemble your furniture, 
+                  ensuring sturdy and precise assembly irrespective of the brand or supplier.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -53,7 +54,7 @@ export default function ServiceCard() {
                 <CardMedia
                   component="img"
                   height="180"
-                  image={FurnitureAssembly}
+                  image={RubbishRemoval}
                   alt="Rubbish Removal"
                 />
                 <CardContent>
@@ -61,9 +62,9 @@ export default function ServiceCard() {
                     Rubbish Removal
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                  Say goodbye to clutter and rubbish hassle-free. 
+                  Optimal handyman tackles unwanted items efficiently with safe and sustainable disposal
+                  leaving your space clean and organized in no time.
                   </Typography>
                 </CardContent>
               </CardActionArea >
@@ -83,9 +84,9 @@ export default function ServiceCard() {
                     Wall Mounting
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica.
+                  Elevate your space with expert wall mounting services. 
+                  From TVs to shelves to artwork, optimal handyman ensures secure installations, 
+                  leaving your walls looking stylish and clutter-free.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -97,7 +98,7 @@ export default function ServiceCard() {
                 <CardMedia
                   component="img"
                   height="180"
-                  image={WallMouniting}
+                  image={GeneralMaintenance}
                   alt="General Maintenance"
                 />
                 <CardContent>
@@ -105,9 +106,8 @@ export default function ServiceCard() {
                     General Maintenance
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                  Keep your property clean with our extensive general maintenance services. 
+                  From minor repairs to routine upkeep, trust us to maintain the functionality and aesthetics of your space.
                   </Typography>
                 </CardContent>
               </CardActionArea>

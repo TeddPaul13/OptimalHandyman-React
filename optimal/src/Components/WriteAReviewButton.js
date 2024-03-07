@@ -12,7 +12,7 @@ export default function WriteAReviewButton() {
   } 
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", mt: 2, mb: 2}}>
+    <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", mt: 2, mb: 2, }}>
     <Button variant="contained" disableElevation onClick={navigateToReviewForm}>
       WRITE A REVIEW
     </Button>
