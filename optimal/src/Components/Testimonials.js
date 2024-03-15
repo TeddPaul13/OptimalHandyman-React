@@ -9,9 +9,8 @@ import WriteAReviewButton from "./WriteAReviewButton";
 
 function Testimonials() {
   return (
-    <Container maxWidth="xxl" sx={{ bgcolor: "#81dd0b" }}>
-      <Container maxWidth="xl">
-        <Box
+    <>
+    <Box
           sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
         >
           <div>
@@ -32,7 +31,7 @@ function Testimonials() {
           }}
         >
           <div>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
               <Typography variant="body1" sx={{ pt: 2 }}>
                 {" "}
                 Here is what previous customers say.
@@ -40,12 +39,16 @@ function Testimonials() {
             </Box>
           </div>
         </Box>
+    <Container maxWidth="xxl" sx={{ bgcolor: "#E1F0DA" }}>
+      <Container maxWidth="xl">
+        
         <ReviewCard />
         <Box sx={{pb: 1}}>
         <WriteAReviewButton />
         </Box>
       </Container>
     </Container>
+    </>
   );
 }
 

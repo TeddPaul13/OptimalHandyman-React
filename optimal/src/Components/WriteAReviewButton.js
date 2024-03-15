@@ -12,8 +12,11 @@ export default function WriteAReviewButton() {
   } 
 
   return (
+    //backgroundColor: "#81dd0b"
     <Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", mt: 2, mb: 2, }}>
-    <Button variant="contained" disableElevation onClick={navigateToReviewForm}>
+    <Button variant="contained" disableElevation onClick={navigateToReviewForm} sx={{backgroundColor: "#81dd0b", '&:hover': {
+              backgroundColor: 'darkgreen'
+            }}}>
       WRITE A REVIEW
     </Button>
     </Box>

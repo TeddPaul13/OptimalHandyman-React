@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import FolderIcon from "@mui/icons-material/Folder";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Container from "@mui/material/Container";
+import backgroundImage from "../Assets/homeBackgroundImage.jpg";
 import AreaMap from "./AreaMap";
 import ListOfSuburbs from "./ListOfSurburbs";
 
@@ -32,36 +33,53 @@ const Demo = styled("div")(({ theme }) => ({
 }));
 // TODO Include the map of the areas of service
 export default function AreasOfService() {
-
   const theme = useTheme();
 
   return (
-    <Container maxWidth="xxl" sx={{ bgcolor: "#81dd0b" , justifyContent: "center" }}>
-    <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
-      <div>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography variant="h5" sx={{ pt: 2 }}>
-            {" "}
-            Areas We Service
-          </Typography>
-        </Box>
-      </div>
-    </Box>
-    <Grid container spacing={2} alignItems="center">
-      {/* <Box sx={{height: 200, border: 2, width: '100%', [theme.breakpoints.up('md')]: {width:'50%'}}}> */}
-      <Grid item xs={12} md={6}>
-      <Box sx={{ display: "flex", justifyContent: "center"}}>
-        <ListOfSuburbs/>
+    <>
+    <div>
+          <Box sx={{ display: "flex", justifyContent: "center", mb:2}}>
+            <Typography variant="h5" sx={{ pt: 2 }}>
+              {" "}
+              Areas We Service
+            </Typography>
+          </Box>
+        </div>
+    <Container
+      maxWidth="xxl"
+      sx={{
+        bgcolor: "#E1F0DA",
+        // backgroundImage: `url(${backgroundImage})`,
+        // backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+        // backgroundPosition: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        
       </Box>
-     
+      <Grid container spacing={2} alignItems="center">
+        {/* <Box sx={{height: 200, border: 2, width: '100%', [theme.breakpoints.up('md')]: {width:'50%'}}}> */}
+        <Grid item xs={12} md={6}>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <ListOfSuburbs />
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Box sx={{ width: 600, height: 450, mb: 2, mt: 2 }}>
+            <AreaMap />
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
-      <Box sx={{width: 600,  height: 450 }}>
-      <AreaMap/>
-      </Box>
-      </Grid>
-
-    </Grid>
     </Container>
+    </>
   );
 }

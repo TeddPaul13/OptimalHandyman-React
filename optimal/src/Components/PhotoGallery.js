@@ -72,13 +72,12 @@ export default function PhotoGallery() {
     ],
   };
   return (
-    <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
-      <Container maxWidth="xl">
-        <Box
+    <>
+    <Box
           sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
         >
           <div>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box sx={{ display: "flex", justifyContent: "center", mb: 2}}>
               <Typography variant="h5" sx={{ pt: 2 }}>
                 {" "}
                 Projects Gallery
@@ -86,10 +85,14 @@ export default function PhotoGallery() {
             </Box>
           </div>
         </Box>
+    
+    <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
+      <Container maxWidth="xl">
+        
         <div className="slider-container">
           <Slider {...settings} className="custom-slider">
             <div className="slide-content">
-             <img src={WallMouniting}/>
+             <img src={WallMouniting} alt="wall mounting"/>
             </div>
             <div className="slide-content">
             <img src={WallMouniting}/>
@@ -122,5 +125,6 @@ export default function PhotoGallery() {
         </div>
       </Container>
     </Container>
+    </>
   );
 }

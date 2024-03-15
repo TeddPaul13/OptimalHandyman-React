@@ -22,7 +22,7 @@ export default function ServiceCard() {
   return (
     <Container component="main" maxWidth="xxl" sx={{ mt: 2 }} >
       <Typography component="h1" variant="h5" sx={{display: 'flex', justifyContent: 'center', mb:2}}>
-        Servirces Provided
+        Services Provided
       </Typography>
       <Box sx={{  p:2, borderRadius: 2, display: 'flex', justifyContent: 'center' }} >
         <div>

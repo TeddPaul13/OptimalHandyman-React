@@ -13,6 +13,7 @@ import DrawerAppBar from "./Components/AppBarWithDrawer";
 import ReviewForm from "./Components/ReviewForm";
 import AreaMap from "./Components/AreaMap";
 
+
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
       <ServiceCard />
       <AreasOfService />
       <PhotoGallery />
+      
       <Testimonials />
       {/* <ReviewForm/> */}
       <Footer />
