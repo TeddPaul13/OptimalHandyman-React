@@ -26,8 +26,9 @@ export default function ServiceCard() {
       </Typography>
       <Box sx={{  p:2, borderRadius: 2, display: 'flex', justifyContent: 'center' }} >
         <div>
-        <Grid container spacing={6}>
-          <Grid item xs={12} sm={3}>
+        <Grid container spacing={6} justifyContent={"center"}>
+          <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card sx={{ maxWidth: 300}}>
               <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
@@ -47,8 +48,10 @@ export default function ServiceCard() {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </Box>
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card sx={{ maxWidth: 300}}>
               <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
@@ -69,8 +72,10 @@ export default function ServiceCard() {
                 </CardContent>
               </CardActionArea >
             </Card>
+            </Box>
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card sx={{ maxWidth: 300}}>
               <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
@@ -91,8 +96,10 @@ export default function ServiceCard() {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </Box>
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card sx={{ maxWidth: 300}}>
               <CardActionArea onClick={navigateToGetQuoteForService}>
                 <CardMedia
@@ -112,6 +119,7 @@ export default function ServiceCard() {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </Box>
           </Grid>
           </Grid>
         </div>

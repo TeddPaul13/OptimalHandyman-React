@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -58,6 +59,7 @@ export default function ReviewCard() {
       <Grid container spacing={{ xs: 2, md: 3 }}>
         {customerReviews.map((reviewsToDisplay, k) => (
           <Grid item xs={12} sm={3} md={4} key={k}>
+            <Box sx={{display: 'flex', justifyContent: 'center'}}>
             <Card sx={{ maxWidth: 345 }}>
               <CardHeader
                 avatar={
@@ -85,6 +87,7 @@ export default function ReviewCard() {
                 <StarOutlinedIcon />
               </CardActions>
             </Card>
+            </Box>
           </Grid>
         ))}
       </Grid>

@@ -1,24 +1,13 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import FolderIcon from "@mui/icons-material/Folder";
-import DeleteIcon from "@mui/icons-material/Delete";
 import Container from "@mui/material/Container";
 import backgroundImage from "../Assets/homeBackgroundImage.jpg";
 import AreaMap from "./AreaMap";
 import ListOfSuburbs from "./ListOfSurburbs";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -34,6 +23,8 @@ const Demo = styled("div")(({ theme }) => ({
 // TODO Include the map of the areas of service
 export default function AreasOfService() {
   const theme = useTheme();
+
+const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"))
 
   return (
     <>
@@ -73,11 +64,12 @@ export default function AreasOfService() {
             <ListOfSuburbs />
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Box sx={{ width: 600, height: 450, mb: 2, mt: 2 }}>
+        {isLargeScreen && (<Grid item xs={12} md={6} className="noshow">
+          <Box sx={{ width: '100%', height: 450, mb: 2, mt: 2 }}>
             <AreaMap />
           </Box>
         </Grid>
+)}
       </Grid>
     </Container>
     </>

@@ -5,16 +5,16 @@ import { red } from '@mui/material/colors';
 function ListOfSuburbs() {
   // Array of 15 words
   const words = [
-    'Apple', 'Banana', 'Orange', 'Grapes', 'Pineapple',
-    'Watermelon', 'Strawberry', 'Blueberry', 'Mango', 'Peach',
-    'Cherry', 'Pear', 'Kiwi', 'Lemon', 'Plum'
+    'Riverstone', 'Rouse Hill', 'Schofields', 'Marsden Park', 'North Kellyville',
+    'Parklea', 'Seven Hills', 'Blacktown', 'Baulkham Hills', 'Quakers Hill',
+    'Plumpton', 'Werrington', 'Ropes Crossing', 'Jordan Springs', 'Stanhope Gardens',
   ];
 
   // Function to render a column with 5 words
   const renderColumn = (columnWords) => (
     <Grid item xs={4}>
       {columnWords.map((word, index) => (
-        <Typography key={index} variant="body1">{word}</Typography>
+        <Typography sx={{margin: 3}} key={index} variant="body1">{word}</Typography>
       ))}
     </Grid>
   );

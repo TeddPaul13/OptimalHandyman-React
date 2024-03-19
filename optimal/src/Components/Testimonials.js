@@ -41,8 +41,9 @@ function Testimonials() {
         </Box>
     <Container maxWidth="xxl" sx={{ bgcolor: "#E1F0DA" }}>
       <Container maxWidth="xl">
-        
+        {/* <Box sx={{display: "flex", justifyContent: "center"}} > */}
         <ReviewCard />
+        {/* </Box> */}
         <Box sx={{pb: 1}}>
         <WriteAReviewButton />
         </Box>
