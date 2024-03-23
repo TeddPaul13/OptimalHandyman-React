@@ -20,7 +20,7 @@ function Footer() {
 
   return (
     <Container maxWidth="xxl" disableGutters sx={{ bgcolor: "white" }}>
-      <Grid container>
+      <Grid container justifyContent={"center"}>
         <Grid item xs={12} sm={3} md={4}>
           <Box
             sx={{

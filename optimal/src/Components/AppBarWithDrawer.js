@@ -19,7 +19,6 @@ import Button from '@mui/material/Button';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {Link as RouterLink} from 'react-router-dom';
 import Styled from "styled-components";
-import Banner from './Banner';
 import Testimonials from './Testimonials';
 
 const drawerWidth = 240;

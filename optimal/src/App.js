@@ -1,6 +1,6 @@
 
 import "./App.css";
-import Banner from "./Components/Banner";
+
 import BizTitle from "./Components/BizTitle";
 import Navbar from "./Components/Navbar";
 import QuoteForm from "./Components/QuoteForm";
@@ -19,7 +19,6 @@ function App() {
     <>
     <div className="App">
       <DrawerAppBar/>
-      {/* <Banner /> */}
       <BizTitle />
       <ServiceCard />
       <AreasOfService />

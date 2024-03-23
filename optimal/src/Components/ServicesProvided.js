@@ -16,8 +16,8 @@ import { useNavigate } from "react-router-dom";
 export default function ServiceCard() {
 
   const navigate = useNavigate();
-  const navigateToGetQuoteForService = () => {
-    navigate('/getquote')
+  const navigateToGetQuoteForService = (title) => {
+    navigate('/getquote', { state: { title } })
   }
   return (
     <Container component="main" maxWidth="xxl" sx={{ mt: 2 }} >
@@ -101,7 +101,7 @@ export default function ServiceCard() {
           <Grid item xs={12} sm={6} md={3}>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card sx={{ maxWidth: 300}}>
-              <CardActionArea onClick={navigateToGetQuoteForService}>
+              <CardActionArea onClick={ () => navigateToGetQuoteForService('General Maintenance')}>
                 <CardMedia
                   component="img"
                   height="180"

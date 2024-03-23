@@ -1,17 +1,15 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import ReviewCard from "./CardForTestimonials";
 import WriteAReviewButton from "./WriteAReviewButton";
+import CardForTestimonials from "./CardForTestimonials";
 
 function Testimonials() {
   return (
     <>
     <Box
-          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" , mt: 2}}
         >
           <div>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -39,11 +37,9 @@ function Testimonials() {
             </Box>
           </div>
         </Box>
-    <Container maxWidth="xxl" sx={{ bgcolor: "#E1F0DA" }}>
+    <Container maxWidth="xxl" sx={{ bgcolor: "#E1F0DA", justifyContent: "center" }}>
       <Container maxWidth="xl">
-        {/* <Box sx={{display: "flex", justifyContent: "center"}} > */}
-        <ReviewCard />
-        {/* </Box> */}
+        <CardForTestimonials/>
         <Box sx={{pb: 1}}>
         <WriteAReviewButton />
         </Box>

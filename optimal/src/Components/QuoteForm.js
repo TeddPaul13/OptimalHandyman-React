@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -22,12 +23,21 @@ import DrawerAppBar from "./AppBarWithDrawer";
 
 export default function QuoteForm() {
 
+  const location = useLocation();
+  const { state } = location;
+
+  // Dynamically set the title based on the selected service
+  let formTitle = "Get a Free Quote";
+  if (state && state.title) {
+    formTitle = `Get a Free Quote for ${state.title}`;
+  }
+
   return (
     <>
     <DrawerAppBar/>
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
       <Typography component="h1" variant="h5">
-        Get a Free Quote 
+        {formTitle} 
       </Typography>
       <Box sx={{ border: 2, p: 2, borderRadius: 2, borderColor: "green" }}>
         <CssBaseline />
@@ -129,19 +139,7 @@ export default function QuoteForm() {
                 />
               </Grid>
             </Grid>
-            <Grid container justifyContent={"center"} mt={2}>
-              {/* <Grid container justify="flex-end">
-                <Grid item>
-                  <Typography>
-                    Include pictures to better understand the task.
-                  </Typography>
-                  <Typography>Add upto 5 photos.</Typography>
-                  {/* Style the Icon button appropriately */}
-                  {/* <IconButton>
-                    <AddBoxOutlinedIcon></AddBoxOutlinedIcon>
-                  </IconButton>
-                </Grid>
-              </Grid> */} 
+            <Grid container justifyContent={"center"} mt={2}> 
               <Button
                 type="submit"
                 size="large"
