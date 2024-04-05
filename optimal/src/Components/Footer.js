@@ -6,6 +6,7 @@ import {
   Divider,
   Grid,
 } from "@mui/material";
+import CopyrightIcon from '@mui/icons-material/Copyright';
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -114,9 +115,16 @@ function Footer() {
           alignItems: "center",
         }}
       >
-        <Typography variant="body2">
-          ABN 94946247183 Copyright {yearToDisplay} Optimal Handyman Services
-        </Typography>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+  <Typography variant="body2" display="inline-flex" sx={{mr:1, flex:1}}>
+    Copyright
+  </Typography>
+  <CopyrightIcon sx={{ fontSize: 'inherit', mr:1}} /> {yearToDisplay}
+  <Typography variant="body2" display="inline-flex" sx={{ml:1}}>
+     Optimal Handyman Services ABN 94946247183
+  </Typography>
+</div>
+        
       </Box>
     </Container>
   );
