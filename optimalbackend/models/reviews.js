@@ -30,13 +30,6 @@ userReviews.init({
     allowNull: false,
     required: true,
   },
-  // TO DO 
-  // Change datatype to date and test the input coming from frontend
-  dateofservice: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    required: true,
-  },
 
   review: {
     type: DataTypes.STRING,
