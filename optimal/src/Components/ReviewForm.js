@@ -1,24 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Avatar from "@mui/material/Avatar";
+
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { spacing } from "@mui/system";
-
 import Container from "@mui/material/Container";
-import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
-import IconButton from "@mui/material/IconButton";
-
-import DatePickerValue from "./DatePicker";
 import SelectService from "./SelectService";
-import Navbar from "./Navbar";
 import axios from "axios"
 import DrawerAppBar from "./AppBarWithDrawer";
 
@@ -28,9 +18,10 @@ export default function ReviewForm() {
     firstname: "",
     lastname: "",
     suburb: "",
-    dateofservice: "",
     serviceprovided: "",
+    review: ""
   })
+
 
   const changeFormDetails = (event) =>{
     const {name, value} = event.target;
@@ -82,7 +73,7 @@ export default function ReviewForm() {
                   variant="outlined"
                   fullWidth
                   id="lastname"
-                  label="Last Name"
+                  label="Lastname"
                   name="lastname"
                   autoComplete="lname"
                   color="success"
@@ -101,9 +92,6 @@ export default function ReviewForm() {
                   color="success"
                   onChange={changeFormDetails}
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <DatePickerValue label="When was it done" onDateChange={changeFormDetails} name="dateofservice"/>
               </Grid>
               <Grid item xs={12} sm={6}>
                 {/* Prop passed here from SelectService component */}

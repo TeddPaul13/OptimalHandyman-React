@@ -16,8 +16,8 @@ import { useNavigate } from "react-router-dom";
 export default function ServiceCard() {
 
   const navigate = useNavigate();
-  const navigateToGetQuoteForService = (title) => {
-    navigate('/getquote', { state: { title } })
+  const navigateToGetQuoteForService = () => {
+    navigate('/getquote')
   }
   return (
     <Container component="main" maxWidth="xxl" sx={{ mt: 2 }} >

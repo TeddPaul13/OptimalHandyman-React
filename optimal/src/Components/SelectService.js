@@ -30,10 +30,10 @@ export default function SelectService({onServiceSelectionChange, name}) {
           label="service"
           onChange={handleChange}
         >
-          <MenuItem value={'furniture'}>Furniture Assembly</MenuItem>
+          <MenuItem value={'furniture assembly'}>Furniture Assembly</MenuItem>
           <MenuItem value={'wallmounting'}>Wall Mounting</MenuItem>
-          <MenuItem value={'minor'}>Rubbish Removal    </MenuItem>
-          <MenuItem value={'other'}>General Maintenance</MenuItem>
+          <MenuItem value={'rubbish removal'}>Rubbish Removal    </MenuItem>
+          <MenuItem value={'general maintenance'}>General Maintenance</MenuItem>
         </Select>
       </FormControl>
     // </Box>

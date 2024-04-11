@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { useLocation } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import Avatar from "@mui/material/Avatar";
@@ -11,43 +11,48 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { spacing } from "@mui/system";
-
 import Container from "@mui/material/Container";
-import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
-import IconButton from "@mui/material/IconButton";
+import emailjs from '@emailjs/browser';
+
+
 
 import DatePickerValue from "./DatePicker";
 import SelectService from "./SelectService";
-import Navbar from "./Navbar";
 import DrawerAppBar from "./AppBarWithDrawer";
+
 
 export default function QuoteForm() {
 
-  const location = useLocation();
-  const { state } = location;
+  const formToEmail = useRef();
 
-  // Dynamically set the title based on the selected service
-  let formTitle = "Get a Free Quote";
-  if (state && state.title) {
-    formTitle = `Get a Free Quote for ${state.title}`;
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_p3cshrh', 'template_lhlvxr9', formToEmail.current, {publicKey: "_n-aAZxq4pK6TAiV7"} )
+            .then(() => {console.log('SUCCESS');
+            formToEmail.current.reset();})
+            .catch((error) => {
+              console.log('FAILED..', error.text)
+            })
   }
+
 
   return (
     <>
     <DrawerAppBar/>
     <Container component="main" maxWidth="sm" sx={{ mt: 2 }}>
       <Typography component="h1" variant="h5">
-        {formTitle} 
+      Get a Free Quote
       </Typography>
       <Box sx={{ border: 2, p: 2, borderRadius: 2, borderColor: "green" }}>
         <CssBaseline />
         <div>
-          <form validate>
+          <form validate ref={formToEmail} onSubmit={sendEmail}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="fname"
-                  name="firstName"
+                  name="clientName"
                   variant="outlined"
                   required
                   fullWidth
@@ -64,7 +69,7 @@ export default function QuoteForm() {
                   fullWidth
                   id="email"
                   label="Email Address"
-                  name="email"
+                  name="senderEmail"
                   autoComplete="email"
                   color="success"
                 />
@@ -119,10 +124,10 @@ export default function QuoteForm() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                <DatePickerValue  label= "When can it be done?"/>
+                <DatePickerValue  label= "When can it be done?" name="date"/>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <SelectService />
+                <SelectService name="service"/>
               </Grid>
               <Grid item xs={12}>
                 <TextField
