@@ -12,6 +12,11 @@ import SelectService from "./SelectService";
 import axios from "axios"
 import DrawerAppBar from "./AppBarWithDrawer";
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+
 export default function ReviewForm() {
 
   const [formDetails, setFormDetails] = useState({
@@ -22,6 +27,7 @@ export default function ReviewForm() {
     review: ""
   })
 
+  const notify = () => toast.success("Thank you for your Review", {position: "top-center"})
 
   const changeFormDetails = (event) =>{
     const {name, value} = event.target;
@@ -35,6 +41,7 @@ export default function ReviewForm() {
     .post("http://localhost:3000/api/reviews/create", formDetails)
     .then((response) => {
       console.log(response)
+      notify()
     })
     .catch((err) =>{
       console.log(err)
@@ -129,6 +136,7 @@ export default function ReviewForm() {
         </div>
       </Box>
     </Container>
+    <ToastContainer/>
     </>
   );
 }

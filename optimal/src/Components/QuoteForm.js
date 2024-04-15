@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import { useLocation } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import Avatar from "@mui/material/Avatar";
@@ -14,14 +14,21 @@ import { spacing } from "@mui/system";
 import Container from "@mui/material/Container";
 import emailjs from '@emailjs/browser';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
+
+import MessageModal from "./MessageToUser";
 import DatePickerValue from "./DatePicker";
 import SelectService from "./SelectService";
 import DrawerAppBar from "./AppBarWithDrawer";
 
 
 export default function QuoteForm() {
+
+  const notify = () => toast("Quote submitted successfully", {position: "top-center"})
 
   const formToEmail = useRef();
 
@@ -30,12 +37,13 @@ export default function QuoteForm() {
 
     emailjs.sendForm('service_p3cshrh', 'template_lhlvxr9', formToEmail.current, {publicKey: "_n-aAZxq4pK6TAiV7"} )
             .then(() => {console.log('SUCCESS');
-            formToEmail.current.reset();})
+            formToEmail.current.reset();
+            notify()
+          })
             .catch((error) => {
               console.log('FAILED..', error.text)
             })
   }
-
 
   return (
     <>
@@ -158,6 +166,7 @@ export default function QuoteForm() {
         </div>
       </Box>
     </Container>
+    <ToastContainer/>
     </>
   );
 }
