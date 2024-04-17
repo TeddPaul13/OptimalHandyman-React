@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState,} from "react";
+import { useNavigate } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import Button from "@mui/material/Button";
@@ -27,6 +28,12 @@ export default function ReviewForm() {
     review: ""
   })
 
+  const navigate = useNavigate();
+
+  const navigateToHomePage = ()=> {
+    navigate("/")
+  }
+
   const notify = () => toast.success("Thank you for your Review", {position: "top-center"})
 
   const changeFormDetails = (event) =>{
@@ -36,12 +43,33 @@ export default function ReviewForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setFormDetails((prev) => ({...prev, [event.target.name]: event.target.value}))
+
+    //Form validation to prevent empty data being sent to server.r
+     const {firstname, lastname, suburb, serviceprovided, review } = formDetails;
+     if(
+      firstname.trim() === "" ||
+      lastname.trim() === "" ||
+      suburb.trim() === "" ||
+      serviceprovided.trim() === "" ||
+      review.trim() === ""
+     ){
+      toast.error("Please fill all fields", {position: "top-center"})
+       return;
+     }
+
+     // TO DO Avoid duplicate names sending data
+  
     axios
     .post("http://localhost:3000/api/reviews/create", formDetails)
     .then((response) => {
       console.log(response)
       notify()
+      setFormDetails({
+        firstname: "",
+        lastname: "",
+        suburb: "",
+        serviceprovided: "",
+        review: ""});
     })
     .catch((err) =>{
       console.log(err)
@@ -66,13 +94,14 @@ export default function ReviewForm() {
                   autoComplete="fname"
                   name="firstname"
                   variant="outlined"
-                  required
+                  // required
                   fullWidth
                   id="firstname"
                   label="Firstname"
                   autoFocus
                   color="success"
                   onChange={changeFormDetails}
+                  value={formDetails.firstname}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -85,6 +114,7 @@ export default function ReviewForm() {
                   autoComplete="lname"
                   color="success"
                   onChange={changeFormDetails}
+                  value={formDetails.lastname}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -98,11 +128,12 @@ export default function ReviewForm() {
                   autoComplete="suburb"
                   color="success"
                   onChange={changeFormDetails}
+                  value={formDetails.suburb}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 {/* Prop passed here from SelectService component */}
-                <SelectService onServiceSelectionChange={changeFormDetails} name="serviceprovided"/> 
+                <SelectService onServiceSelectionChange={changeFormDetails} name="serviceprovided" value={formDetails.serviceprovided}/> 
               </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -117,10 +148,10 @@ export default function ReviewForm() {
                   autoComplete="task"
                   color="success"
                   onChange={changeFormDetails}
+                  value={formDetails.review}
                 />
               </Grid>
             </Grid>
-            {/*  SEND DATA TO DATABASE ONSUBMIT. */}
             <Grid container justifyContent={"center"} mt={2}>
               
               <Button

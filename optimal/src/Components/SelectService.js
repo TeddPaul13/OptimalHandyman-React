@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectService({onServiceSelectionChange, name}) {
+export default function SelectService({onServiceSelectionChange, name, value}) {
   const [service, setService] = useState('');
 
   const handleChange = (event) => {
@@ -26,7 +26,7 @@ export default function SelectService({onServiceSelectionChange, name}) {
           id="select-service"
           color='success'
           required
-          value={service}
+          value={value}
           label="service"
           onChange={handleChange}
         >
