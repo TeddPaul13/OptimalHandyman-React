@@ -36,13 +36,17 @@ function Footer() {
               Contacts
             </Typography>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body">optimalhandyservices@gmail.com</Typography>
+              <Typography variant="body">
+              <a href ="mailto:optimalhandyservices@gmail.com" target="_blank" rel="noreferrer" className="contact-link">optimalhandyservices@gmail.com</a>
+              </Typography>
             </div>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body">0412567362</Typography>
+              <Typography variant="body" className="contact-link">0412567362</Typography>
             </div>
             <div style={{ marginBottom: 8 }}>
-              <Typography variant="body">Riverstone, NSW</Typography>
+              <Typography variant="body">
+              <a href="https://goo.gl/maps/ne6DQFdy1q8MLqDE7" target="_blank" rel="noreferrer" className="contact-link">Riverstone, NSW</a>
+              </Typography>
             </div>
           </Box>
         </Grid>
@@ -60,16 +64,16 @@ function Footer() {
               Our Services
             </Typography>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body">Furniture Assembly</Typography>
+              <Typography variant="body" className="contact-link">Furniture Assembly</Typography>
             </div>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body">Rubbish Removal</Typography>
+              <Typography variant="body" className="contact-link">Rubbish Removal</Typography>
             </div>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body">Wall Mounting</Typography>
+              <Typography variant="body" className="contact-link">Wall Mounting</Typography>
             </div>
             <div style={{ marginBottom: 8 }}>
-              <Typography variant="body">General Maintenance</Typography>
+              <Typography variant="body" className="contact-link">General Maintenance</Typography>
             </div>
           </Box>
         </Grid>

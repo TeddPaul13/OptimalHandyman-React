@@ -2,16 +2,13 @@
 import "./App.css";
 
 import BizTitle from "./Components/BizTitle";
-import Navbar from "./Components/Navbar";
-import QuoteForm from "./Components/QuoteForm";
 import ServiceCard from "./Components/ServicesProvided";
 import Testimonials from "./Components/Testimonials";
 import AreasOfService from "./Components/AreasOfService";
 import PhotoGallery from "./Components/PhotoGallery";
 import Footer from "./Components/Footer";
 import DrawerAppBar from "./Components/AppBarWithDrawer";
-import ReviewForm from "./Components/ReviewForm";
-import AreaMap from "./Components/AreaMap";
+import ScrollToTopButton from "./Components/ScrollToTopButton";
 
 
 function App() {
@@ -23,11 +20,9 @@ function App() {
       <ServiceCard />
       <AreasOfService />
       <PhotoGallery />
-      
       <Testimonials />
-      {/* <ReviewForm/> */}
       <Footer />
-      {/* <QuoteForm/> */}
+      <ScrollToTopButton/>
     </div>
    
     </>
