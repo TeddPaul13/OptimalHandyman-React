@@ -31,7 +31,7 @@ export default function SelectService({onServiceSelectionChange, name, value}) {
           onChange={handleChange}
         >
           <MenuItem value={'furniture assembly'}>Furniture Assembly</MenuItem>
-          <MenuItem value={'wallmounting'}>Wall Mounting</MenuItem>
+          <MenuItem value={'wall mounting'}>Wall Mounting</MenuItem>
           <MenuItem value={'rubbish removal'}>Rubbish Removal    </MenuItem>
           <MenuItem value={'general maintenance'}>General Maintenance</MenuItem>
         </Select>

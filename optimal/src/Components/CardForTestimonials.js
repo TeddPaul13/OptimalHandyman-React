@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useEffect, useState} from "react";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -9,65 +9,75 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
+import axios from "axios";
 
 
 export default function CardForTestimonials() {
-  const customerReviews = [
-    {
-      name: "Teddy Paul",
-      suburb: "Blacktown",
-      service: "Lawn Mowing",
-      review:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like. This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-    },
-    {
-      name: "Paul Teddy",
-      suburb: "Blacktown",
-      service: "Lawn Mowing",
-      review:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like. This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-    },
-    {
-      name: "teddy Paul",
-      suburb: "Blacktown",
-      service: "Lawn Mowing",
-      review:
-        "Add 1 cup of frozen peas along with the mussels,if you like. This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-    },
-  ];
 
+  const [customerReviews, setCustomerReviews] = useState([])
+  const [displayedReviews, setDisplayedReviews] = useState([]);
+
+
+  useEffect (() =>{
+    axios.get("http://localhost:3000/api/reviews/getreview")
+    .then((response) =>{
+      const testimonials = response.data.data
+      setCustomerReviews(testimonials);
+      setDisplayedReviews(getRandomReviews(testimonials))
+      
+    })
+  }, []);
+
+  useEffect (() =>{
+    const intervalId = setInterval(() =>{
+      setDisplayedReviews(getRandomReviews(customerReviews));
+    }, 3000);
+
+    return () => clearInterval(intervalId)
+  }, [customerReviews])
+  
+const getRandomReviews = (reviewsArray) => {
+  const randomIndices = [];
+  while (randomIndices.length < 3){
+    const randomIndex = Math.floor(Math.random() * reviewsArray.length);
+    if(!randomIndices.includes(randomIndex)){
+      randomIndices.push(randomIndex);
+    }
+  }
+  return randomIndices.map(index => reviewsArray[index])
+}
   return (
     <>
       <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={"center"}>
-        {customerReviews.map((reviewsToDisplay, k) => (
-          <Grid item xs={12} sm={3} md={4} key={k}>
+        {displayedReviews.map((review, index) => (
+          <Grid item xs={12} sm={3} md={4} key={index}>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: "100%" }}>
               <CardHeader
                 avatar={
                   // Set the Avatar to be the first letter of customer name
                   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    {reviewsToDisplay.name[0].toUpperCase()}
+                    {review.firstname?.[0]?.toUpperCase()}
                   </Avatar>
                 }
-                title={reviewsToDisplay.name}
-                subheader={reviewsToDisplay.suburb}
+                title={`${review.firstname} ${review.lastname}`}
+                subheader={review.suburb}
               />
               <CardContent>
                 <Typography variant="subtitle1" color="text.secondary">
-                  {reviewsToDisplay.service}
+                  {review.serviceprovided.replace(/\b\w/g, (char) => char.toUpperCase())}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {" "}
-                  {reviewsToDisplay.review}
+                  {review.review}
                 </Typography>
               </CardContent>
-              <CardActions disableSpacing>
+              {/* <CardActions disableSpacing>
                 <StarOutlinedIcon />
                 <StarOutlinedIcon />
                 <StarOutlinedIcon />
                 <StarOutlinedIcon />
-              </CardActions>
+              </CardActions> */}
             </Card>
             </Box>
           </Grid>
