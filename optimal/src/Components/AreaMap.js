@@ -1,10 +1,7 @@
 import React from 'react'
-import {useRef, useEffect} from 'react'
-import { MapContainer, TileLayer } from 'react-leaflet'
-import { styled } from "@mui/material/styles";
+import {useRef} from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
-import { map } from 'leaflet';
-import { useMediaQuery } from '@mui/material';
 
 // Define the bounds for Western Sydney
 const westernSydneyBounds = [
@@ -15,7 +12,6 @@ const westernSydneyBounds = [
 function AreaMap() {
 
   const mapRef = useRef(null);
-  const isLargeScreen = useMediaQuery('(min-width:600px)')
 
  const handleMap = (map) =>{
   mapRef.current = map;

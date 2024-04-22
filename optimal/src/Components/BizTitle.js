@@ -6,41 +6,48 @@ import Typography from "@mui/material/Typography";
 import backgroundImage from "../Assets/homeBackgroundImage.jpg";
 import { useNavigate } from "react-router-dom";
 
-
 function BizTitle() {
-
   const navigate = useNavigate();
   const navigateToGetQuoteForService = () => {
-    navigate('/getquote') }
+    navigate("/getquote");
+  };
 
   return (
-    
     <Container
       maxWidth="xxl"
       sx={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '400px'}}
-        
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        height: "400px",
+      }}
     >
-      <Box textAlign="center"> {/* Wrap Typography and Button inside Box */}
-        <Typography variant="h3" align="center" sx={{ color: '#fff' }}>
+      <Box textAlign="center">
+        {" "}
+        <Typography variant="h3" align="center" sx={{ color: "#fff" }}>
           Relaible Handyman Services in Western Sydney.
         </Typography>
-        <Button variant="contained" size="large" sx={{ marginTop: 2, backgroundColor: "#81dd0b", '&:hover': {
-              backgroundColor: 'darkgreen'
-            }, }} onClick={navigateToGetQuoteForService}>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{
+            marginTop: 2,
+            backgroundColor: "#81dd0b",
+            "&:hover": {
+              backgroundColor: "darkgreen",
+            },
+          }}
+          onClick={navigateToGetQuoteForService}
+        >
           Get a Free Quote
         </Button>
       </Box>
     </Container>
-    
   );
 }
 

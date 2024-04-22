@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function SelectService({onServiceSelectionChange, name, value}) {
-  const [service, setService] = useState('');
+ const [selectedService, setSelectedService] = useState(value || '');
 
   const handleChange = (event) => {
-    setService(event.target.value);
+   const selectedValue = event.target.value;
+   setSelectedService(selectedValue);
 // calling onchange function and passing it a prop to review form component.
     if (onServiceSelectionChange){
       onServiceSelectionChange(event)
@@ -26,7 +26,7 @@ export default function SelectService({onServiceSelectionChange, name, value}) {
           id="select-service"
           color='success'
           required
-          value={value}
+          value={selectedService}
           label="service"
           onChange={handleChange}
         >

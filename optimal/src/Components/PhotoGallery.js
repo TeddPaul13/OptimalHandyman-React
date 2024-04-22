@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -39,7 +39,12 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "#81dd0b", marginRight: 10,}}
+      style={{
+        ...style,
+        display: "block",
+        background: "#81dd0b",
+        marginRight: 10,
+      }}
       onClick={onClick}
     />
   );
@@ -85,95 +90,131 @@ export default function PhotoGallery() {
   };
   return (
     <>
-    <Box
-          sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", mb:2}}
-        >
-          <div>
-            <Box sx={{ display: "flex", justifyContent: "center"}}>
-              <Typography variant="h5" sx={{ pt: 2 }}>
-                {" "}
-                Projects Gallery
-              </Typography>
-            </Box>
-          </div>
-        </Box>
-    
-    <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
-      <Container maxWidth="xl">
-        
-        <div className="slider-container">
-          <Slider {...settings} className="custom-slider">
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-             <img src={Image1} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image2}  alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image3} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image4} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image5} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image6} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image7} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image8} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image9} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image10} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            <div className="slide-content">
-            <div className="image-wrapper">
-
-            <img src={Image11} alt="wall mounting" style={{ maxWidth: "100%", maxHeight: "100%" }}/>
-            </div>
-            </div>
-            
-          </Slider>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          mb: 2,
+        }}
+      >
+        <div>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Typography variant="h5" sx={{ pt: 2 }}>
+              {" "}
+              Projects Gallery
+            </Typography>
+          </Box>
         </div>
+      </Box>
+
+      <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
+        <Container maxWidth="xl">
+          <div className="slider-container">
+            <Slider {...settings} className="custom-slider">
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image1}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image2}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image3}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image4}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image5}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image6}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image7}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image8}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image9}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image10}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+              <div className="slide-content">
+                <div className="image-wrapper">
+                  <img
+                    src={Image11}
+                    alt="wall mounting"
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                </div>
+              </div>
+            </Slider>
+          </div>
+        </Container>
       </Container>
-    </Container>
     </>
   );
 }

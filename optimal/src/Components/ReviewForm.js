@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import Button from "@mui/material/Button";
@@ -25,12 +25,12 @@ export default function ReviewForm() {
     serviceprovided: "",
     review: "",
   });
+// TODO Make the page redirect to Home page after form submission.
+  // const navigate = useNavigate();
 
-  const navigate = useNavigate();
-
-  const navigateToHomePage = () => {
-    navigate("/");
-  };
+  // const navigateToHomePage = () => {
+  //   navigate("/");
+  // };
 
   const reviewCharacterLimit = 100;
 
@@ -58,6 +58,7 @@ export default function ReviewForm() {
       toast.error("Please fill all fields", { position: "top-center" });
       return;
     }
+    // Validation to Avoid duplicate names sending data
     if (
       firstname.trim().length < 3 ||
       suburb.trim().length < 5 ||
@@ -66,8 +67,6 @@ export default function ReviewForm() {
       toast.error("Please add more characters", { position: "top-center" });
       return;
     }
-
-    // TO DO Avoid duplicate names sending data
 
     axios
       .post("http://localhost:3000/api/reviews/create", formDetails)
@@ -164,7 +163,7 @@ export default function ReviewForm() {
                     onChange={changeFormDetails}
                     value={formDetails.review}
                     inputProps={{
-                      maxlength: reviewCharacterLimit,
+                      maxLength: reviewCharacterLimit,
                     }}
                     helperText={`${formDetails.review.length}/${reviewCharacterLimit}`}
                   />

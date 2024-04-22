@@ -1,16 +1,10 @@
-import React, {useRef, useState} from "react";
-import { useLocation } from "react-router-dom";
+import React, {useRef} from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { spacing } from "@mui/system";
 import Container from "@mui/material/Container";
 import emailjs from '@emailjs/browser';
 
@@ -80,7 +74,7 @@ export default function QuoteForm() {
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
-                {/* Add code to Validate phone number if the user chooses to  */}
+                {/* TODO Add code to Validate phone number if the user chooses to  */}
                 <TextField
                   variant="outlined"
                   fullWidth

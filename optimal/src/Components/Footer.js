@@ -6,7 +6,7 @@ import {
   Divider,
   Grid,
 } from "@mui/material";
-import CopyrightIcon from '@mui/icons-material/Copyright';
+import CopyrightIcon from "@mui/icons-material/Copyright";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -37,15 +37,31 @@ function Footer() {
             </Typography>
             <div style={{ marginBottom: 16 }}>
               <Typography variant="body">
-              <a href ="mailto:optimalhandyservices@gmail.com" target="_blank" rel="noreferrer" className="contact-link">optimalhandyservices@gmail.com</a>
+                <a
+                  href="mailto:optimalhandyservices@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  optimalhandyservices@gmail.com
+                </a>
               </Typography>
             </div>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body" className="contact-link">0412567362</Typography>
+              <Typography variant="body" className="contact-link">
+                0412567362
+              </Typography>
             </div>
             <div style={{ marginBottom: 8 }}>
               <Typography variant="body">
-              <a href="https://goo.gl/maps/ne6DQFdy1q8MLqDE7" target="_blank" rel="noreferrer" className="contact-link">Riverstone, NSW</a>
+                <a
+                  href="https://goo.gl/maps/ne6DQFdy1q8MLqDE7"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  Riverstone, NSW
+                </a>
               </Typography>
             </div>
           </Box>
@@ -64,16 +80,24 @@ function Footer() {
               Our Services
             </Typography>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body" className="contact-link">Furniture Assembly</Typography>
+              <Typography variant="body" className="contact-link">
+                Furniture Assembly
+              </Typography>
             </div>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body" className="contact-link">Rubbish Removal</Typography>
+              <Typography variant="body" className="contact-link">
+                Rubbish Removal
+              </Typography>
             </div>
             <div style={{ marginBottom: 16 }}>
-              <Typography variant="body" className="contact-link">Wall Mounting</Typography>
+              <Typography variant="body" className="contact-link">
+                Wall Mounting
+              </Typography>
             </div>
             <div style={{ marginBottom: 8 }}>
-              <Typography variant="body" className="contact-link">General Maintenance</Typography>
+              <Typography variant="body" className="contact-link">
+                General Maintenance
+              </Typography>
             </div>
           </Box>
         </Grid>
@@ -119,16 +143,19 @@ function Footer() {
           alignItems: "center",
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-  <Typography variant="body2" display="inline-flex" sx={{mr:1, flex:1}}>
-    Copyright
-  </Typography>
-  <CopyrightIcon sx={{ fontSize: 'inherit', mr:1}} /> {yearToDisplay}
-  <Typography variant="body2" display="inline-flex" sx={{ml:1}}>
-     Optimal Handyman Services ABN 94946247183
-  </Typography>
-</div>
-        
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Typography
+            variant="body2"
+            display="inline-flex"
+            sx={{ mr: 1, flex: 1 }}
+          >
+            Copyright
+          </Typography>
+          <CopyrightIcon sx={{ fontSize: "inherit", mr: 1 }} /> {yearToDisplay}
+          <Typography variant="body2" display="inline-flex" sx={{ ml: 1 }}>
+            Optimal Handyman Services ABN 94946247183
+          </Typography>
+        </div>
       </Box>
     </Container>
   );

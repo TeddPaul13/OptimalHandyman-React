@@ -1,20 +1,33 @@
-import React from 'react';
-import { Grid, Box, Typography } from '@mui/material'; // Import necessary components from Material-UI
-import { red } from '@mui/material/colors';
+import React from "react";
+import { Grid, Box, Typography } from "@mui/material";
 
 function ListOfSuburbs() {
-  // Array of 15 words
+  // Array of 15 suburbs
   const words = [
-    'Riverstone', 'Rouse Hill', 'Schofields', 'Marsden Park', 'North Kellyville',
-    'Parklea', 'Seven Hills', 'Blacktown', 'Baulkham Hills', 'Quakers Hill',
-    'Plumpton', 'Werrington', 'Ropes Crossing', 'Jordan Springs', 'Stanhope Gardens',
+    "Riverstone",
+    "Rouse Hill",
+    "Schofields",
+    "Marsden Park",
+    "North Kellyville",
+    "Parklea",
+    "Seven Hills",
+    "Blacktown",
+    "Baulkham Hills",
+    "Quakers Hill",
+    "Plumpton",
+    "Werrington",
+    "Ropes Crossing",
+    "Jordan Springs",
+    "Stanhope Gardens",
   ];
 
   // Function to render a column with 5 words
   const renderColumn = (columnWords) => (
     <Grid item xs={4}>
       {columnWords.map((word, index) => (
-        <Typography sx={{margin: 3}} key={index} variant="body1">{word}</Typography>
+        <Typography sx={{ margin: 3 }} key={index} variant="body1">
+          {word}
+        </Typography>
       ))}
     </Grid>
   );
@@ -26,19 +39,18 @@ function ListOfSuburbs() {
   }
 
   return (
-   
-      <Grid item xs={12} md={6}>
-        <Box sx={{}}>
-          <Grid container spacing={3}>
-            {/* Render three columns with 5 words each */}
-            {columns.map((columnWords, index) => (
-              <React.Fragment key={index}>
-                {renderColumn(columnWords)}
-              </React.Fragment>
-            ))}
-          </Grid>
-          </Box>
-      </Grid>
+    <Grid item xs={12} md={6}>
+      <Box sx={{}}>
+        <Grid container spacing={3}>
+          {/* Render three columns with 5 words each */}
+          {columns.map((columnWords, index) => (
+            <React.Fragment key={index}>
+              {renderColumn(columnWords)}
+            </React.Fragment>
+          ))}
+        </Grid>
+      </Box>
+    </Grid>
   );
 }
 
