@@ -1,8 +1,20 @@
+/**
+ * Renders a list of suburbs in a grid layout.
+ * @component
+ */
 import React from "react";
 import { Grid, Box, Typography } from "@mui/material";
 
+/**
+ * Functional component for rendering a list of suburbs.
+ * @returns {JSX.Element} The rendered component.
+ */
+
 function ListOfSuburbs() {
-  // Array of 15 suburbs
+  /**
+   * Array of 15 suburbs.
+   * @type {Array}
+   */
   const words = [
     "Riverstone",
     "Rouse Hill",
@@ -21,7 +33,11 @@ function ListOfSuburbs() {
     "Stanhope Gardens",
   ];
 
-  // Function to render a column with 5 words
+  /**
+   * Function to render a column with 5 words.
+   * @param {Array} columnWords - Array of words for the column.
+   * @returns {JSX.Element} The rendered column.
+   */
   const renderColumn = (columnWords) => (
     <Grid item xs={4}>
       {columnWords.map((word, index) => (
@@ -32,7 +48,10 @@ function ListOfSuburbs() {
     </Grid>
   );
 
-  // Splitting the words into groups of 5 for each column
+  /**
+   * Splitting the words into groups of 5 for each column.
+   * @type {Array.<Array>}
+   */
   const columns = [];
   for (let i = 0; i < words.length; i += 5) {
     columns.push(words.slice(i, i + 5));

@@ -115,10 +115,10 @@ export default function QuoteForm() {
                   variant="outlined"
                   required
                   fullWidth
-                  name="suburb"
+                  name="postcode"
                   label="Postcode"
-                  id="suburb"
-                  autoComplete="suburb"
+                  id="postcode"
+                  autoComplete="postcode"
                   color="success"
                 />
               </Grid>

@@ -1,3 +1,7 @@
+/**
+ * Renders a footer component with contact information, services offered, and a call-to-action button.
+ * @component
+ */
 import {
   Container,
   Box,
@@ -10,11 +14,22 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+// Get the current year for display
 const thisYear = new Date();
 const yearToDisplay = thisYear.getFullYear();
 
+/**
+ * Footer component function.
+ * @returns {JSX.Element} Footer component JSX
+ */
+
+
 function Footer() {
   const navigate = useNavigate();
+
+   /**
+    * Function to navigate to the "Get Quote" page
+    */
   const navigateToGetQuoteForService = () => {
     navigate("/getquote");
   };

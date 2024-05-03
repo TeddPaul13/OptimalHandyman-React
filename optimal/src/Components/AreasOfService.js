@@ -1,3 +1,7 @@
+/**
+ * Renders the component displaying areas of service.
+ * @component
+ */
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -8,8 +12,22 @@ import AreaMap from "./AreaMap";
 import ListOfSuburbs from "./ListOfSurburbs";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+/**
+ * Functional component for displaying areas of service.
+ * @returns {JSX.Element} The rendered component.
+ */
+
 export default function AreasOfService() {
+
+  /**
+   * Theme object from MUI.
+   */
   const theme = useTheme();
+
+   /**
+   * Boolean indicating if the screen size is large. The map is only displayed on large screens.
+   * @type {boolean}
+   */
 
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 

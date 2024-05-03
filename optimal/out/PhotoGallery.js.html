@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: PhotoGallery.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: PhotoGallery.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Renders a photo gallery.
  * @component
  */
@@ -31,7 +59,7 @@ import Image11 from "../Assets/Gardenbed.png";
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
+    &lt;div
       className={className}
       style={{
         ...style,
@@ -52,7 +80,7 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
+    &lt;div
       className={className}
       style={{
         ...style,
@@ -79,8 +107,8 @@ export default function PhotoGallery() {
     speed: 3000,
     autoplaySpeed: 3000,
     cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: &lt;SampleNextArrow />,
+    prevArrow: &lt;SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -109,8 +137,8 @@ export default function PhotoGallery() {
     ],
   };
   return (
-    <>
-      <Box
+    &lt;>
+      &lt;Box
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -118,123 +146,146 @@ export default function PhotoGallery() {
           mb: 2,
         }}
       >
-        <div>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Typography variant="h5" sx={{ pt: 2 }}>
+        &lt;div>
+          &lt;Box sx={{ display: "flex", justifyContent: "center" }}>
+            &lt;Typography variant="h5" sx={{ pt: 2 }}>
               {" "}
               Projects Gallery
-            </Typography>
-          </Box>
-        </div>
-      </Box>
+            &lt;/Typography>
+          &lt;/Box>
+        &lt;/div>
+      &lt;/Box>
 {/* Container for the slider */}
-      <Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
-        <Container maxWidth="xl">
-          <div className="slider-container">
-            <Slider {...settings} className="custom-slider">
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+      &lt;Container maxWidth="xxl" sx={{ bgcolor: "white" }}>
+        &lt;Container maxWidth="xl">
+          &lt;div className="slider-container">
+            &lt;Slider {...settings} className="custom-slider">
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image1}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image2}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image3}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image4}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image5}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image6}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image7}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image8}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image9}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image10}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-              <div className="slide-content">
-                <div className="image-wrapper">
-                  <img
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="slide-content">
+                &lt;div className="image-wrapper">
+                  &lt;img
                     src={Image11}
                     alt="wall mounting"
                     style={{ maxWidth: "100%", maxHeight: "100%" }}
                   />
-                </div>
-              </div>
-            </Slider>
-          </div>
-        </Container>
-      </Container>
-    </>
+                &lt;/div>
+              &lt;/div>
+            &lt;/Slider>
+          &lt;/div>
+        &lt;/Container>
+      &lt;/Container>
+    &lt;/>
   );
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AreaMap">AreaMap</a></li><li><a href="global.html#BizTitle">BizTitle</a></li><li><a href="global.html#DrawerAppBar">DrawerAppBar</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#ListOfSuburbs">ListOfSuburbs</a></li><li><a href="global.html#SampleNextArrow">SampleNextArrow</a></li><li><a href="global.html#SamplePrevArrow">SamplePrevArrow</a></li><li><a href="global.html#westernSydneyBounds">westernSydneyBounds</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Apr 30 2024 08:18:20 GMT+1000 (Australian Eastern Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

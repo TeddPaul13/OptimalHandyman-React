@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Footer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Footer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Renders a footer component with contact information, services offered, and a call-to-action button.
+ * @component
+ */
+import {
+  Container,
+  Box,
+  Typography,
+  Button,
+  Divider,
+  Grid,
+} from "@mui/material";
+import CopyrightIcon from "@mui/icons-material/Copyright";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+// Get the current year for display
+const thisYear = new Date();
+const yearToDisplay = thisYear.getFullYear();
+
+/**
+ * Footer component function.
+ * @returns {JSX.Element} Footer component JSX
+ */
+
+
+function Footer() {
+  const navigate = useNavigate();
+
+   /**
+    * Function to navigate to the "Get Quote" page
+    */
+  const navigateToGetQuoteForService = () => {
+    navigate("/getquote");
+  };
+
+  return (
+    &lt;Container maxWidth="xxl" disableGutters sx={{ bgcolor: "white" }}>
+      &lt;Grid container justifyContent={"center"}>
+        &lt;Grid item xs={12} sm={3} md={4}>
+          &lt;Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mt: 2,
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            &lt;Typography variant="h6" sx={{ mb: 2 }}>
+              Contacts
+            &lt;/Typography>
+            &lt;div style={{ marginBottom: 16 }}>
+              &lt;Typography variant="body">
+                &lt;a
+                  href="mailto:optimalhandyservices@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  optimalhandyservices@gmail.com
+                &lt;/a>
+              &lt;/Typography>
+            &lt;/div>
+            &lt;div style={{ marginBottom: 16 }}>
+              &lt;Typography variant="body" className="contact-link">
+                0412567362
+              &lt;/Typography>
+            &lt;/div>
+            &lt;div style={{ marginBottom: 8 }}>
+              &lt;Typography variant="body">
+                &lt;a
+                  href="https://goo.gl/maps/ne6DQFdy1q8MLqDE7"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="contact-link"
+                >
+                  Riverstone, NSW
+                &lt;/a>
+              &lt;/Typography>
+            &lt;/div>
+          &lt;/Box>
+        &lt;/Grid>
+        &lt;Grid item xs={12} sm={3} md={4}>
+          &lt;Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mt: 2,
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            &lt;Typography variant="h6" sx={{ mb: 2 }}>
+              Our Services
+            &lt;/Typography>
+            &lt;div style={{ marginBottom: 16 }}>
+              &lt;Typography variant="body" className="contact-link">
+                Furniture Assembly
+              &lt;/Typography>
+            &lt;/div>
+            &lt;div style={{ marginBottom: 16 }}>
+              &lt;Typography variant="body" className="contact-link">
+                Rubbish Removal
+              &lt;/Typography>
+            &lt;/div>
+            &lt;div style={{ marginBottom: 16 }}>
+              &lt;Typography variant="body" className="contact-link">
+                Wall Mounting
+              &lt;/Typography>
+            &lt;/div>
+            &lt;div style={{ marginBottom: 8 }}>
+              &lt;Typography variant="body" className="contact-link">
+                General Maintenance
+              &lt;/Typography>
+            &lt;/div>
+          &lt;/Box>
+        &lt;/Grid>
+        &lt;Grid item xs={12} sm={3} md={4}>
+          &lt;Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mt: 9,
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            &lt;Typography variant="h6">
+              Let's get the job done for you.
+            &lt;/Typography>
+            &lt;Button
+              variant="outlined"
+              size="large"
+              onClick={navigateToGetQuoteForService}
+              sx={{
+                marginTop: 2,
+                color: "#81dd0b",
+                "&amp;:hover": {
+                  backgroundColor: "#81dd0b",
+                  color: "white",
+                },
+              }}
+            >
+              Get a Free Quote Today
+            &lt;/Button>
+          &lt;/Box>
+        &lt;/Grid>
+      &lt;/Grid>
+      &lt;Divider variant="middle" sx={{ mt: 2, mb: 2 }}>&lt;/Divider>
+      &lt;Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          mt: 2,
+          mb: 2,
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        &lt;div style={{ display: "flex", alignItems: "center" }}>
+          &lt;Typography
+            variant="body2"
+            display="inline-flex"
+            sx={{ mr: 1, flex: 1 }}
+          >
+            Copyright
+          &lt;/Typography>
+          &lt;CopyrightIcon sx={{ fontSize: "inherit", mr: 1 }} /> {yearToDisplay}
+          &lt;Typography variant="body2" display="inline-flex" sx={{ ml: 1 }}>
+            Optimal Handyman Services ABN 94946247183
+          &lt;/Typography>
+        &lt;/div>
+      &lt;/Box>
+    &lt;/Container>
+  );
+}
+
+export default Footer;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AreaMap">AreaMap</a></li><li><a href="global.html#BizTitle">BizTitle</a></li><li><a href="global.html#DrawerAppBar">DrawerAppBar</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#ListOfSuburbs">ListOfSuburbs</a></li><li><a href="global.html#SampleNextArrow">SampleNextArrow</a></li><li><a href="global.html#SamplePrevArrow">SamplePrevArrow</a></li><li><a href="global.html#westernSydneyBounds">westernSydneyBounds</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Apr 30 2024 08:18:20 GMT+1000 (Australian Eastern Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
