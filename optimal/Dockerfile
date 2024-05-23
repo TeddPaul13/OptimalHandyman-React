@@ -1,23 +1,25 @@
 
 FROM node:22-alpine3
 
-WORKDIR /OPTIMAL/
+WORKDIR /optimal/
 
-COPY src/ /OPTIMAL/src
+COPY src/ /optimal/src
 
-COPY package*.json /OPTIMAL/
+COPY package*.json ./
 
-COPY public/ /OPTIMAL/public
+COPY public/ /optimal/public
 
 RUN npm install
 
 COPY . .
 
+RUN npm run build
+
 CMD [ "npm", "start" ]
 
 FROM nginx:latest
 
-COPY --from=0 /OPTIMAL/build /usr/share/nginx/html
+COPY --from=build /optimal/build /usr/share/nginx/html
 
 EXPOSE 80
 
