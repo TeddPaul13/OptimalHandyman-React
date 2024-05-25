@@ -1,23 +1,26 @@
 
-FROM node:22-alpine3
+FROM node:lts-alpine AS build
 
 WORKDIR /optimal/
 
-COPY src/ /optimal/src
 
 COPY package*.json ./
 
-COPY public/ /optimal/public
-
 RUN npm install
 
-COPY . .
+COPY src/ /optimal/src 
+
+COPY public/ /optimal/public
+
+RUN chmod -R 755 /optimal/src /optimal/public
 
 RUN npm run build
 
 CMD [ "npm", "start" ]
 
-FROM nginx:latest
+FROM nginx:stable-perl
+
+WORKDIR /usr/share/nginx/html
 
 COPY --from=build /optimal/build /usr/share/nginx/html
 
