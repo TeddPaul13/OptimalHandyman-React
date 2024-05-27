@@ -4,4 +4,4 @@ WORKDIR /optimalbackend
 COPY package.json . 
 RUN npm install
 COPY . .
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "node", "server.js"]
