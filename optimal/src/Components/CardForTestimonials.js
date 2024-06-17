@@ -31,7 +31,9 @@ export default function CardForTestimonials() {
    * @type {Array}
    */
 
+  const [loading, setLoading] = useState(true)
   const [displayedReviews, setDisplayedReviews] = useState([]);
+  const [error, setError] = useState(null)
 
   /**
    * Fetches customer reviews from the API and sets the state.
@@ -39,15 +41,20 @@ export default function CardForTestimonials() {
 
 
   useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL;
-  console.log('API URL:', apiUrl);
     axios
-      .get(`${apiUrl}/api/reviews/getreview`)
+      .get("http://localhost:8080/api/reviews/getreview")
       .then((response) => {
         const testimonials = response.data.data;
         setCustomerReviews(testimonials);
         setDisplayedReviews(getRandomReviews(testimonials));
-      });
+        setLoading(false);
+        console.log(testimonials)
+      })
+      .catch((err) => {
+        console.error(err)
+        setError("Error fetching reviews. Please bare with me!")
+        setLoading(false)
+      })
   }, []);
 
   /**
@@ -55,19 +62,25 @@ export default function CardForTestimonials() {
    */
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    if (customerReviews.length > 0){const intervalId = setInterval(() => {
       setDisplayedReviews(getRandomReviews(customerReviews));
     }, 3000);
 
     return () => clearInterval(intervalId);
+  }
   }, [customerReviews]);
-  
+
 /**
    * Returns a random selection of reviews.
    * @param {Array} reviewsArray - Array of reviews.
    * @returns {Array} Randomly selected reviews.
    */
   const getRandomReviews = (reviewsArray) => {
+    const reviewsLength = reviewsArray.length;
+  // If less that 3 reviews, return all available reviews
+    if(reviewsLength < 3){
+      return reviewsArray
+    }
     const randomIndices = [];
     while (randomIndices.length < 3) {
       const randomIndex = Math.floor(Math.random() * reviewsArray.length);
@@ -76,7 +89,16 @@ export default function CardForTestimonials() {
       }
     }
     return randomIndices.map((index) => reviewsArray[index]);
+    
   };
+
+  if (loading) {
+    return <div>Loading testimonials...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
   return (
     <>
       <Grid container spacing={{ xs: 2, md: 3 }} justifyContent={"center"}>

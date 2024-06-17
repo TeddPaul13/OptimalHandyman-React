@@ -68,10 +68,8 @@ export default function ReviewForm() {
       return;
     }
 
-    const apiUrl = process.env.REACT_APP_API_URL;
-
     axios
-      .post(`${apiUrl}/api/reviews/create`, formDetails)
+      .post("/api/reviews/create", formDetails)
       .then((response) => {
         console.log(response);
         notify();

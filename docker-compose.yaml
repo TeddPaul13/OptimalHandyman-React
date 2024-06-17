@@ -1,0 +1,54 @@
+services:
+  mysqldb:
+    image: mysql:8.0
+    container_name: optimal_mysql_db
+    restart: unless-stopped
+    env_file:
+      - ./optimalbackend/.env
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=OpijaTed@2023
+      - MYSQL_PASSWORD=OpijaTed@2023
+      - MYSQL_DATABASE=optimalhand
+    networks:
+      - optimal_network
+    volumes:
+      - db:/var/lib/mysql
+
+  back-end:
+    image: optimalhandyman-backend:v1.1
+    container_name: optimal_node_server
+    env_file:
+      - ./optimalbackend/.env
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=optimal_mysql_db
+      - DB_PORT=3307
+      #- DB_USER=root
+      #- DB_PASSWORD=Opija@2206
+      #- DB_NAME=optimalhand
+
+    networks:
+      - optimal_network
+    depends_on:
+      - mysqldb
+
+  front-end:
+    image: teddtycoon/optimalhandyman-website:v1.0
+    container_name: optimal_react_frontend
+    ports:
+      - "80:80"
+    environment:
+      - REACT_APP_API_URL=http://back-end:5000
+    depends_on:
+      - back-end
+
+networks:
+  optimal_network:
+    driver: bridge
+volumes:
+  db:
+
