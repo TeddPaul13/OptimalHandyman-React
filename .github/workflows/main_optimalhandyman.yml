@@ -92,5 +92,5 @@ jobs:
         with:
           app-name: 'optimalhandyman'
           slot-name: 'Production'
-          package: './backend_release/optimalbackend'
+          package: './optimalbackend'
           
