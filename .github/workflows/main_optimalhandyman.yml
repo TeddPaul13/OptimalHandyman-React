@@ -29,8 +29,8 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          zip -r release.zip optimal
-        working-directory: .
+          Compress-Archive -Path optimal/* -DestinationPath release.zip
+        
 
       - name: Copy build to backend
         run: |
@@ -43,8 +43,7 @@ jobs:
 
       - name: Zip backend artifact for deployment
         run: |
-          zip -r backend_release.zip optimalbackend
-        working-directory: .
+          Compress-Archive -Path optimalbackend/* -DestinationPath backend_release.zip
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
