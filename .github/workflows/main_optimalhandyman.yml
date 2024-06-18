@@ -73,7 +73,12 @@ jobs:
 
       - name: Unzip backend artifact
         run: unzip backend_release.zip -d backend_release
-      
+        
+      - name: List files for debug
+        run: |
+          echo "Backend files:"
+          ls -la backend_release/optimalbackend
+          
       - name: Login to Azure
         uses: azure/login@v1
         with:
