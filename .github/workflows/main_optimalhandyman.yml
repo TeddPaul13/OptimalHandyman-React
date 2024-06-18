@@ -27,6 +27,11 @@ jobs:
           npm run build --if-present
         working-directory: ./optimal
 
+      - name: Zip artifact for deployment
+        run: |
+          zip -r release.zip optimal
+        working-directory: .
+
       - name: Copy build to backend
         run: |
           cp -r optimal/build optimalbackend/
@@ -35,12 +40,19 @@ jobs:
         run: |
           npm install
         working-directory: ./optimalbackend
+
+      - name: Zip backend artifact for deployment
+        run: |
+          zip -r backend_release.zip optimalbackend
+        working-directory: .
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: .
+          path: |
+            release.zip
+            backend_release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,6 +68,13 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
+          path: .
+
+      - name: Unzip frontend artifact
+        run: unzip release.zip -d .
+
+      - name: Unzip backend artifact
+        run: unzip backend_release.zip -d .
       
       - name: Login to Azure
         uses: azure/login@v1
