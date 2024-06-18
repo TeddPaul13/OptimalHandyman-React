@@ -42,7 +42,7 @@ export default function CardForTestimonials() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/reviews/getreview")
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/reviews/getreview`)
       .then((response) => {
         const testimonials = response.data.data;
         setCustomerReviews(testimonials);

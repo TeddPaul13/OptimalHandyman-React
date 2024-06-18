@@ -3,7 +3,7 @@ let express = require("express");
 
 
 let dbConnect = require("./dbConnect");
-dbConnect.connectMysql()
+
 
 const bodyParser = require('body-parser')
 const cors = require('cors');
@@ -22,7 +22,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(cors());
+
+dbConnect.connectMysql();
+
+const corsOptions = {
+    origin: "optimalhandyman.azurewebsites.net", //Change this to production frontend url
+    optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
 
 //Set Router
 const reviewRouters = require("./routes/reviewsRoute");
