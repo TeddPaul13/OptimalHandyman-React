@@ -70,10 +70,10 @@ jobs:
           path: .
 
       - name: Unzip frontend artifact
-        run: unzip release.zip -d .
+        run: unzip release.zip -d release
 
       - name: Unzip backend artifact
-        run: unzip backend_release.zip -d .
+        run: unzip backend_release.zip -d backend_release
       
       - name: Login to Azure
         uses: azure/login@v1
