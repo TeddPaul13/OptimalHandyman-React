@@ -29,7 +29,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          Compress-Archive -Path optimal/* -DestinationPath release.zip
+          Compress-Archive -Path .\optimal\* -DestinationPath release.zip
         
 
       - name: Copy build to backend
@@ -43,7 +43,7 @@ jobs:
 
       - name: Zip backend artifact for deployment
         run: |
-          Compress-Archive -Path optimalbackend/* -DestinationPath backend_release.zip
+          Compress-Archive -Path .\optimalbackend\* -DestinationPath backend_release.zip
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -88,5 +88,5 @@ jobs:
         with:
           app-name: 'optimalhandyman'
           slot-name: 'Production'
-          package: './optimalbackend'
+          package: './backend_release/optimalbackend'
           
